@@ -8,388 +8,1043 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Idrissah Online Shop</title>
+    <title>
+        Idrissah Online Shop | Your Trusted Online Marketplace
+    </title>
+
 
     <style>
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
 
         body {
-            margin: 0;
+
             font-family: Arial, Helvetica, sans-serif;
+
             background: #f5f5f5;
+
             color: #222;
+
         }
 
 
-        /* HEADER */
+        /* =========================
+           TOP BAR
+        ========================== */
 
-        header {
+
+        .top-bar {
+
             background: #111;
+
             color: white;
-            padding: 18px 25px;
+
+            padding: 8px 5%;
+
             display: flex;
-            align-items: center;
+
             justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
 
-
-        .logo-section {
-            display: flex;
             align-items: center;
-            gap: 15px;
+
+            font-size: 14px;
+
         }
 
 
-        .logo-section img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-            border-radius: 8px;
+        /* =========================
+           MAIN HEADER
+        ========================== */
+
+
+        .header {
+
             background: white;
+
+            padding: 18px 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            border-bottom: 1px solid #eee;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
         }
 
 
-        .logo-section h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+        .logo {
 
-
-        .header-button {
-            background: #25D366;
-            color: white;
             text-decoration: none;
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-weight: bold;
+
+            color: #111;
+
+            min-width: 230px;
+
         }
 
 
-        /* HERO */
+        .logo-main {
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .logo-sub {
+
+            font-size: 12px;
+
+            color: #777;
+
+            letter-spacing: 3px;
+
+            margin-top: 3px;
+
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================== */
+
+
+        .search-box {
+
+            flex: 1;
+
+            display: flex;
+
+            max-width: 700px;
+
+        }
+
+
+        .search-box input {
+
+            flex: 1;
+
+            padding: 15px 18px;
+
+            border: 2px solid #111;
+
+            border-right: none;
+
+            border-radius: 8px 0 0 8px;
+
+            font-size: 16px;
+
+            outline: none;
+
+        }
+
+
+        .search-box button {
+
+            width: 65px;
+
+            border: none;
+
+            background: #111;
+
+            color: white;
+
+            border-radius: 0 8px 8px 0;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+        }
+
+
+        .search-box button:hover {
+
+            background: #333;
+
+        }
+
+
+        /* =========================
+           HEADER ACTIONS
+        ========================== */
+
+
+        .header-actions {
+
+            display: flex;
+
+            gap: 20px;
+
+            align-items: center;
+
+        }
+
+
+        .header-action {
+
+            text-decoration: none;
+
+            color: #222;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            text-align: center;
+
+        }
+
+
+        .header-action span {
+
+            display: block;
+
+            font-size: 22px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+
+        .nav {
+
+            background: white;
+
+            border-bottom: 1px solid #ddd;
+
+            padding: 12px 5%;
+
+            display: flex;
+
+            gap: 30px;
+
+            overflow-x: auto;
+
+        }
+
+
+        .nav a {
+
+            text-decoration: none;
+
+            color: #333;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+
+        }
+
+
+        .nav a:hover {
+
+            color: #d60000;
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
 
         .hero {
-            background: white;
-            text-align: center;
-            padding: 55px 20px;
+
+            margin: 25px 5%;
+
+            background: linear-gradient(
+                120deg,
+                #111,
+                #333
+            );
+
+            color: white;
+
+            border-radius: 15px;
+
+            padding: 55px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            min-height: 320px;
+
         }
 
 
-        .hero h2 {
-            margin: 0 0 15px;
-            font-size: 38px;
+        .hero-content {
+
+            max-width: 650px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: 48px;
+
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+
         }
 
 
         .hero p {
-            font-size: 18px;
-            color: #666;
-            max-width: 700px;
-            margin: auto;
+
+            font-size: 19px;
+
+            color: #ddd;
+
             line-height: 1.6;
+
+            margin-bottom: 25px;
+
         }
 
 
-        /* PRODUCTS SECTION */
+        .hero-button {
 
-        .products-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            display: inline-block;
+
+            background: white;
+
+            color: #111;
+
+            text-decoration: none;
+
+            padding: 14px 25px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
         }
 
 
-        .products-section h2 {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 35px;
+        .hero-button:hover {
+
+            background: #eee;
+
         }
 
 
-        /* PRODUCT GRID */
+        .hero-icon {
 
-        .product-grid {
+            font-size: 130px;
+
+            opacity: 0.9;
+
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+
+        .section {
+
+            padding: 20px 5%;
+
+        }
+
+
+        .section-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-header h2 {
+
+            font-size: 28px;
+
+        }
+
+
+        .section-header a {
+
+            color: #111;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =========================
+           CATEGORIES
+        ========================== */
+
+
+        .categories {
+
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(250px, 1fr)
-            );
 
-            gap: 25px;
+            grid-template-columns:
+                repeat(8, 1fr);
+
+            gap: 15px;
+
         }
 
 
-        /* PRODUCT CARD */
+        .category {
+
+            background: white;
+
+            padding: 20px 10px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            color: #222;
+
+            box-shadow:
+                0 3px 10px
+                rgba(0,0,0,0.05);
+
+            transition: 0.2s;
+
+        }
+
+
+        .category:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.1);
+
+        }
+
+
+        .category-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .category-name {
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================== */
+
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 20px;
+
+        }
+
 
         .product-card {
-            background: white;
-            border-radius: 15px;
-            padding: 18px;
-            box-shadow: 0 5px 20px rgba(
-                0,
-                0,
-                0,
-                0.08
-            );
 
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0,0,0,0.06);
+
+            transition: 0.2s;
+
         }
 
 
         .product-card:hover {
+
             transform: translateY(-5px);
 
-            box-shadow: 0 10px 30px rgba(
-                0,
-                0,
-                0,
-                0.15
-            );
-        }
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,0.12);
 
-
-        /* CLICKABLE IMAGE */
-
-        .product-image-link {
-            display: block;
-            text-decoration: none;
-        }
-
-
-        .product-image-container {
-            width: 100%;
-            height: 300px;
-
-            background: #f8f8f8;
-
-            border-radius: 12px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-
-            cursor: pointer;
         }
 
 
         .product-image {
+
+            height: 220px;
+
+            background: #f7f7f7;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+        }
+
+
+        .product-image img {
+
             width: 100%;
+
             height: 100%;
 
             object-fit: contain;
 
             display: block;
 
-            transition:
-                transform 0.3s ease;
-        }
-
-
-        .product-image:hover {
-            transform: scale(1.05);
         }
 
 
         .no-image {
-            color: #777;
+
+            color: #999;
+
+            font-size: 14px;
+
+        }
+
+
+        .product-info {
+
+            padding: 15px;
+
+        }
+
+
+        .product-name {
+
             font-size: 16px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            min-height: 40px;
+
         }
 
-
-        /* PRODUCT NAME */
-
-        .product-card h3 {
-            font-size: 21px;
-            margin: 18px 0 10px;
-        }
-
-
-        /* PRODUCT DESCRIPTION */
-
-        .product-description {
-            color: #666;
-            line-height: 1.5;
-            font-size: 15px;
-            min-height: 45px;
-        }
-
-
-        /* PRICE */
 
         .product-price {
-            font-size: 22px;
+
+            font-size: 20px;
+
             font-weight: bold;
+
             color: #008000;
-            margin: 15px 0;
+
+            margin-bottom: 10px;
+
         }
 
 
-        /* BUTTONS */
+        .available {
 
-        .button-container {
+            color: #008000;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .unavailable {
+
+            color: #d00000;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .product-buttons {
+
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+
+            gap: 8px;
+
         }
 
 
         .view-button {
-            display: inline-block;
+
+            flex: 1;
+
+            text-align: center;
+
+            padding: 11px 5px;
 
             background: #111;
+
             color: white;
 
             text-decoration: none;
 
-            padding: 12px 18px;
+            border-radius: 6px;
 
-            border-radius: 8px;
+            font-size: 13px;
 
             font-weight: bold;
 
+        }
+
+
+        .whatsapp-button {
+
+            flex: 1;
+
             text-align: center;
-        }
 
-
-        .view-button:hover {
-            background: #333;
-        }
-
-
-        .order-button {
-            display: inline-block;
+            padding: 11px 5px;
 
             background: #25D366;
+
             color: white;
 
             text-decoration: none;
 
-            padding: 12px 18px;
+            border-radius: 6px;
 
-            border-radius: 8px;
+            font-size: 13px;
 
             font-weight: bold;
 
-            text-align: center;
         }
 
 
-        .order-button:hover {
-            background: #1ebe5d;
-        }
+        /* =========================
+           TRUST
+        ========================== */
 
 
-        /* EMPTY PRODUCTS */
+        .trust-section {
 
-        .no-products {
+            margin: 30px 5%;
+
             background: white;
-            padding: 40px;
-            text-align: center;
+
             border-radius: 12px;
-            color: #777;
+
+            padding: 25px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            text-align: center;
+
         }
 
 
-        /* FOOTER */
+        .trust-item {
+
+            padding: 15px;
+
+        }
+
+
+        .trust-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .trust-item h3 {
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .trust-item p {
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
 
         footer {
+
             background: #111;
+
             color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
+
+            margin-top: 40px;
+
+            padding: 45px 5% 25px;
+
+        }
+
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr 1fr;
+
+            gap: 40px;
+
+        }
+
+
+        footer h3 {
+
+            margin-bottom: 15px;
+
         }
 
 
         footer p {
-            margin: 8px 0;
+
+            color: #bbb;
+
+            line-height: 1.7;
+
         }
 
 
-        .footer-whatsapp {
-            display: inline-block;
-            margin-top: 12px;
-            background: #25D366;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
+        footer a {
+
+            display: block;
+
+            color: #bbb;
+
             text-decoration: none;
-            font-weight: bold;
+
+            margin-bottom: 10px;
+
         }
 
 
-        /* MOBILE */
+        footer a:hover {
 
-        @media (
-            max-width: 600px
-        ) {
+            color: white;
 
-            header {
-                padding: 12px 15px;
+        }
+
+
+        .copyright {
+
+            border-top: 1px solid #333;
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+
+        @media (max-width: 1000px) {
+
+
+            .header {
+
+                flex-wrap: wrap;
+
             }
 
 
-            .logo-section h1 {
-                font-size: 18px;
+            .search-box {
+
+                order: 3;
+
+                flex-basis: 100%;
+
+                max-width: 100%;
+
             }
 
 
-            .logo-section img {
-                width: 45px;
-                height: 45px;
+            .categories {
+
+                grid-template-columns:
+                    repeat(4, 1fr);
+
             }
 
 
-            .header-button {
-                padding: 9px 12px;
-                font-size: 13px;
+            .products {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+
+        }
+
+
+        @media (max-width: 700px) {
+
+
+            .top-bar {
+
+                font-size: 11px;
+
+            }
+
+
+            .header {
+
+                padding: 15px;
+
+                gap: 15px;
+
+            }
+
+
+            .logo {
+
+                min-width: auto;
+
+            }
+
+
+            .logo-main {
+
+                font-size: 20px;
+
+            }
+
+
+            .header-actions {
+
+                margin-left: auto;
+
+            }
+
+
+            .header-action {
+
+                font-size: 11px;
+
             }
 
 
             .hero {
-                padding: 40px 15px;
+
+                margin: 15px;
+
+                padding: 30px 20px;
+
+                min-height: 280px;
+
             }
 
 
-            .hero h2 {
-                font-size: 28px;
+            .hero h1 {
+
+                font-size: 32px;
+
             }
 
 
             .hero p {
+
                 font-size: 16px;
+
             }
 
 
-            .products-section {
-                padding: 0 15px;
+            .hero-icon {
+
+                display: none;
+
             }
 
 
-            .product-image-container {
-                height: 280px;
+            .section {
+
+                padding: 15px;
+
             }
 
 
-            .button-container {
+            .categories {
+
+                grid-template-columns:
+                    repeat(4, 1fr);
+
+                gap: 8px;
+
+            }
+
+
+            .category {
+
+                padding: 12px 5px;
+
+            }
+
+
+            .category-icon {
+
+                font-size: 25px;
+
+            }
+
+
+            .category-name {
+
+                font-size: 11px;
+
+            }
+
+
+            .products {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+
+            }
+
+
+            .product-image {
+
+                height: 170px;
+
+            }
+
+
+            .product-info {
+
+                padding: 10px;
+
+            }
+
+
+            .product-name {
+
+                font-size: 14px;
+
+            }
+
+
+            .product-price {
+
+                font-size: 17px;
+
+            }
+
+
+            .product-buttons {
+
                 flex-direction: column;
+
             }
 
 
-            .view-button,
-            .order-button {
-                width: 100%;
+            .trust-section {
+
+                margin: 15px;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                padding: 15px;
+
             }
+
+
+            .footer-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 25px;
+
+            }
+
 
         }
 
@@ -401,57 +1056,378 @@
 <body>
 
 
+<!-- TOP BAR -->
+
+
+<div class="top-bar">
+
+    <span>
+
+        Welcome to Idrissah Online Shop
+
+    </span>
+
+
+    <span>
+
+        📞 +255 689 435 698
+
+    </span>
+
+</div>
+
+
+
 <!-- HEADER -->
 
-<header>
+
+<header class="header">
 
 
-    <div class="logo-section">
-
-        <img
-            src="/static/shop/images/logo.png"
-            alt="Idrissah Online Shop Logo"
-        >
-
-        <h1>
-            Idrissah Online Shop
-        </h1>
-
-    </div>
+    <a href="/" class="logo">
 
 
-    <a
-        href="https://wa.me/255689435698"
-        target="_blank"
-        class="header-button"
-    >
+        <div class="logo-main">
 
-        WhatsApp
+            IDRISSAH ONLINE SHOP
+
+        </div>
+
+
+        <div class="logo-sub">
+
+            YOUR TRUSTED ONLINE MARKETPLACE
+
+        </div>
+
 
     </a>
+
+
+
+    <form
+        class="search-box"
+        method="GET"
+        action="/"
+    >
+
+
+        <input
+            type="text"
+            name="q"
+            placeholder="Search for products..."
+        >
+
+
+        <button type="submit">
+
+            🔍
+
+        </button>
+
+
+    </form>
+
+
+
+    <div class="header-actions">
+
+
+        <a href="#" class="header-action">
+
+            <span>👤</span>
+
+            Account
+
+        </a>
+
+
+        <a href="#" class="header-action">
+
+            <span>🛒</span>
+
+            Cart
+
+        </a>
+
+
+    </div>
 
 
 </header>
 
 
 
-<!-- HERO SECTION -->
+<!-- NAVIGATION -->
+
+
+<nav class="nav">
+
+
+    <a href="/">
+
+        🏠 Home
+
+    </a>
+
+
+    <a href="#categories">
+
+        🏷️ Categories
+
+    </a>
+
+
+    <a href="#products">
+
+        🛍️ Products
+
+    </a>
+
+
+    <a href="#deals">
+
+        🔥 Hot Deals
+
+    </a>
+
+
+    <a href="#about">
+
+        ℹ️ About Us
+
+    </a>
+
+
+</nav>
+
+
+
+<!-- HERO -->
+
 
 <section class="hero">
 
 
-    <h2>
-        Welcome to Idrissah Online Shop
-    </h2>
+    <div class="hero-content">
 
 
-    <p>
+        <h1>
 
-        Discover quality products at affordable prices.
-        Click on any product image to view the full
-        product details and place your order.
+            Shop Everything<br>
 
-    </p>
+            You Love, Online
+
+        </h1>
+
+
+        <p>
+
+            Discover quality products at great prices.
+
+            Shop electronics, fashion, accessories,
+
+            home products and more from
+
+            Idrissah Online Shop.
+
+        </p>
+
+
+        <a
+            href="#products"
+            class="hero-button"
+        >
+
+            🛍️ Start Shopping
+
+        </a>
+
+
+    </div>
+
+
+    <div class="hero-icon">
+
+        🛒
+
+    </div>
+
+
+</section>
+
+
+
+<!-- CATEGORIES -->
+
+
+<section
+    class="section"
+    id="categories"
+>
+
+
+    <div class="section-header">
+
+
+        <h2>
+
+            Shop By Category
+
+        </h2>
+
+
+    </div>
+
+
+
+    <div class="categories">
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                📱
+
+            </div>
+
+            <div class="category-name">
+
+                Electronics
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                💻
+
+            </div>
+
+            <div class="category-name">
+
+                Computers
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                👕
+
+            </div>
+
+            <div class="category-name">
+
+                Fashion
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                👟
+
+            </div>
+
+            <div class="category-name">
+
+                Shoes
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                👜
+
+            </div>
+
+            <div class="category-name">
+
+                Bags
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                💄
+
+            </div>
+
+            <div class="category-name">
+
+                Beauty
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                🏠
+
+            </div>
+
+            <div class="category-name">
+
+                Home
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#products" class="category">
+
+            <div class="category-icon">
+
+                ⌚
+
+            </div>
+
+            <div class="category-name">
+
+                Accessories
+
+            </div>
+
+        </a>
+
+
+    </div>
 
 
 </section>
@@ -460,164 +1436,308 @@
 
 <!-- PRODUCTS -->
 
-<section class="products-section">
+
+<section
+    class="section"
+    id="products"
+>
 
 
-    <h2>
-        Our Products
-    </h2>
+    <div class="section-header">
 
 
-    {% if products %}
+        <h2>
+
+            Featured Products
+
+        </h2>
 
 
-        <div class="product-grid">
+        <a href="#products">
+
+            View All →
+
+        </a>
 
 
-            {% for product in products %}
+    </div>
 
 
-                <div class="product-card">
+
+    <div class="products">
 
 
-                    <!-- PRODUCT IMAGE -->
+        {% for product in products %}
 
-                    <a
-                        href="{% url 'product_detail' product.id %}"
-                        class="product-image-link"
+
+        <div class="product-card">
+
+
+            <a
+                href="{% url 'product_detail' product.id %}"
+                class="product-image"
+            >
+
+
+                {% if product.image %}
+
+
+                    <img
+                        src="{{ product.image.url }}"
+                        alt="{{ product.name }}"
                     >
 
 
-                        <div
-                            class="product-image-container"
-                        >
+                {% else %}
 
 
-                            {% if product.image %}
+                    <div class="no-image">
+
+                        No Image Available
+
+                    </div>
 
 
-                                <img
-                                    src="{{ product.image.url }}"
-                                    alt="{{ product.name }}"
-                                    class="product-image"
-                                >
+                {% endif %}
 
 
-                            {% else %}
+            </a>
 
 
-                                <div class="no-image">
 
-                                    No Product Image
-
-                                </div>
+            <div class="product-info">
 
 
-                            {% endif %}
+                <div class="product-name">
+
+                    {{ product.name }}
+
+                </div>
 
 
-                        </div>
 
+                <div class="product-price">
+
+                    TSh {{ product.price }}
+
+                </div>
+
+
+
+                {% if product.available %}
+
+
+                    <div class="available">
+
+                        ✓ In Stock
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="unavailable">
+
+                        ✕ Out of Stock
+
+                    </div>
+
+
+                {% endif %}
+
+
+
+                <div class="product-buttons">
+
+
+                    <a
+                        href="{% url 'product_detail' product.id %}"
+                        class="view-button"
+                    >
+
+                        View Product
 
                     </a>
 
 
-
-                    <!-- PRODUCT NAME -->
-
-                    <h3>
-
-                        {{ product.name }}
-
-                    </h3>
-
-
-
-                    <!-- DESCRIPTION -->
-
-                    {% if product.description %}
-
-                        <div
-                            class="product-description"
-                        >
-
-                            {{ product.description|truncatewords:15 }}
-
-                        </div>
-
-                    {% endif %}
-
-
-
-                    <!-- PRICE -->
-
-                    <div
-                        class="product-price"
+                    <a
+                        href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop,%20I%20am%20interested%20in%20{{ product.name }}"
+                        target="_blank"
+                        class="whatsapp-button"
                     >
 
-                        TSh {{ product.price }}
+                        WhatsApp
 
-                    </div>
-
-
-
-                    <!-- BUTTONS -->
-
-                    <div
-                        class="button-container"
-                    >
-
-
-                        <a
-                            href="{% url 'product_detail' product.id %}"
-                            class="view-button"
-                        >
-
-                            View Product
-
-                        </a>
-
-
-                        <a
-                            href="{% url 'order_product' product.id %}"
-                            class="order-button"
-                        >
-
-                            Order Now
-
-                        </a>
-
-
-                    </div>
+                    </a>
 
 
                 </div>
 
 
-            {% endfor %}
+            </div>
 
 
         </div>
 
 
-    {% else %}
+        {% empty %}
 
 
-        <div class="no-products">
+        <div style="
+            grid-column: 1 / -1;
+            background: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+        ">
 
-            <h3>
-                No Products Available
-            </h3>
 
-            <p>
-                Products will appear here once
-                they are added by the administrator.
+            <h2>
+
+                No Products Available Yet
+
+            </h2>
+
+
+            <p style="
+                margin-top: 10px;
+                color: #777;
+            ">
+
+                New products will appear here soon.
+
             </p>
 
+
         </div>
 
 
-    {% endif %}
+        {% endfor %}
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- TRUST -->
+
+
+<section class="trust-section">
+
+
+    <div class="trust-item">
+
+
+        <div class="trust-icon">
+
+            🛍️
+
+        </div>
+
+
+        <h3>
+
+            Quality Products
+
+        </h3>
+
+
+        <p>
+
+            Shop quality products from our store.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="trust-item">
+
+
+        <div class="trust-icon">
+
+            💳
+
+        </div>
+
+
+        <h3>
+
+            Secure Payments
+
+        </h3>
+
+
+        <p>
+
+            Convenient payment options available.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="trust-item">
+
+
+        <div class="trust-icon">
+
+            📦
+
+        </div>
+
+
+        <h3>
+
+            Easy Ordering
+
+        </h3>
+
+
+        <p>
+
+            Order online quickly and easily.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="trust-item">
+
+
+        <div class="trust-icon">
+
+            💬
+
+        </div>
+
+
+        <h3>
+
+            WhatsApp Support
+
+        </h3>
+
+
+        <p>
+
+            Contact us anytime for assistance.
+
+        </p>
+
+
+    </div>
 
 
 </section>
@@ -626,32 +1746,158 @@
 
 <!-- FOOTER -->
 
-<footer>
+
+<footer id="about">
 
 
-    <p>
-
-        © 2026 Idrissah Online Shop
-
-    </p>
+    <div class="footer-grid">
 
 
-    <p>
-
-        Quality Products • Affordable Prices
-
-    </p>
+        <div>
 
 
-    <a
-        href="https://wa.me/255689435698"
-        target="_blank"
-        class="footer-whatsapp"
-    >
+            <h3>
 
-        Chat With Us on WhatsApp
+                IDRISSAH ONLINE SHOP
 
-    </a>
+            </h3>
+
+
+            <p>
+
+                Your trusted online marketplace.
+
+                Discover quality products,
+
+                great prices and easy ordering
+
+                from anywhere.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div>
+
+
+            <h3>
+
+                Quick Links
+
+            </h3>
+
+
+            <a href="/">
+
+                Home
+
+            </a>
+
+
+            <a href="#categories">
+
+                Categories
+
+            </a>
+
+
+            <a href="#products">
+
+                Products
+
+            </a>
+
+
+        </div>
+
+
+
+        <div>
+
+
+            <h3>
+
+                Customer Service
+
+            </h3>
+
+
+            <a href="https://wa.me/255689435698"
+               target="_blank">
+
+                WhatsApp
+
+            </a>
+
+
+            <a href="tel:+255689435698">
+
+                Call Us
+
+            </a>
+
+
+            <a href="tel:+255791338080">
+
+                Airtel Money
+
+            </a>
+
+
+        </div>
+
+
+
+        <div>
+
+
+            <h3>
+
+                Payment
+
+            </h3>
+
+
+            <p>
+
+                M-Pesa
+
+            </p>
+
+
+            <p>
+
+                Airtel Money
+
+            </p>
+
+
+            <p>
+
+                Secure Payment Verification
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="copyright">
+
+
+        © 2026 Idrissah Online Shop.
+
+        All Rights Reserved.
+
+
+    </div>
 
 
 </footer>

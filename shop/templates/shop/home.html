@@ -7,10 +7,8 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>
         Idrissah Online Shop | Dar es Salaam, Tanzania
@@ -40,7 +38,9 @@
         }
 
 
-        /* TOP BAR */
+        /* =========================
+           TOP BAR
+        ========================= */
 
         .top-bar {
 
@@ -72,7 +72,9 @@
         }
 
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
 
@@ -141,7 +143,9 @@
         }
 
 
-        /* SEARCH */
+        /* =========================
+           SEARCH
+        ========================= */
 
         .search-box {
 
@@ -192,7 +196,9 @@
         }
 
 
-        /* HEADER ACTIONS */
+        /* =========================
+           HEADER ACTIONS
+        ========================= */
 
         .header-actions {
 
@@ -216,7 +222,9 @@
         }
 
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
 
@@ -253,15 +261,17 @@
         }
 
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
 
             background:
 
                 linear-gradient(
-                    rgba(0,0,0,0.55),
-                    rgba(0,0,0,0.55)
+                    rgba(0,0,0,0.60),
+                    rgba(0,0,0,0.60)
                 ),
 
                 url("{% static 'shop/images/logo.png' %}");
@@ -342,7 +352,9 @@
         }
 
 
-        /* MAIN */
+        /* =========================
+           CONTAINER
+        ========================= */
 
         .container {
 
@@ -380,7 +392,9 @@
         }
 
 
-        /* CATEGORIES */
+        /* =========================
+           CATEGORIES
+        ========================= */
 
         .categories {
 
@@ -437,7 +451,9 @@
         }
 
 
-        /* PRODUCTS */
+        /* =========================
+           PRODUCTS
+        ========================= */
 
         .products {
 
@@ -537,7 +553,9 @@
         }
 
 
-        /* FEATURES */
+        /* =========================
+           FEATURES
+        ========================= */
 
         .features {
 
@@ -589,7 +607,9 @@
         }
 
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
 
@@ -626,6 +646,10 @@
         }
 
 
+        /* =========================
+           LOCATION
+        ========================= */
+
         .location-box {
 
             margin-top: 25px;
@@ -645,6 +669,13 @@
         .location-box h3 {
 
             margin-bottom: 10px;
+
+        }
+
+
+        .location-box p {
+
+            margin-bottom: 0;
 
         }
 
@@ -670,7 +701,16 @@
         }
 
 
-        /* CONTACT */
+        .map-button:hover {
+
+            background: #e85b00;
+
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
 
@@ -745,7 +785,9 @@
         }
 
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
 
@@ -833,7 +875,9 @@
         }
 
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media
         (max-width: 900px) {
@@ -950,14 +994,20 @@
 <body>
 
 
-<!-- TOP BAR -->
+<!-- =========================
+     TOP BAR
+========================= -->
 
 <div class="top-bar">
+
 
     <div>
 
         Welcome to
-        <strong>Idrissah Online Shop</strong>
+
+        <strong>
+            Idrissah Online Shop
+        </strong>
 
     </div>
 
@@ -974,16 +1024,20 @@
 
     </div>
 
+
 </div>
 
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
 
     <div class="logo-area">
+
 
         <img
             src="{% static 'shop/images/logo.png' %}"
@@ -993,15 +1047,19 @@
 
         <div class="logo-text">
 
+
             <h1>
                 Idrissah Online Shop
             </h1>
+
 
             <p>
                 Your Trusted Online Marketplace
             </p>
 
+
         </div>
+
 
     </div>
 
@@ -1013,11 +1071,13 @@
         action="/"
     >
 
+
         <input
             type="text"
             name="q"
             placeholder="Search for products..."
         >
+
 
         <button type="submit">
 
@@ -1025,11 +1085,13 @@
 
         </button>
 
+
     </form>
 
 
 
     <div class="header-actions">
+
 
         <a href="#contact">
 
@@ -1044,6 +1106,7 @@
 
         </a>
 
+
     </div>
 
 
@@ -1051,35 +1114,45 @@
 
 
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
+
 
     <a href="/">
         🏠 Home
     </a>
 
+
     <a href="#categories">
         🏷️ Categories
     </a>
+
 
     <a href="#products">
         🛍️ Products
     </a>
 
+
     <a href="#products">
         🔥 Hot Deals
     </a>
+
 
     <a href="#about">
         ℹ️ About Us
     </a>
 
+
 </nav>
 
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -1138,7 +1211,9 @@
 
 
 
-<!-- CATEGORIES -->
+<!-- =========================
+     CATEGORIES
+========================= -->
 
 <section
     class="container"
@@ -1148,9 +1223,20 @@
 
     <div class="section-title">
 
+
         <h2>
+
             🛒 Shop By Category
+
         </h2>
+
+
+        <p>
+
+            Find what you need quickly.
+
+        </p>
+
 
     </div>
 
@@ -1161,104 +1247,128 @@
 
         <div class="category">
 
+
             <div class="category-icon">
                 📱
             </div>
+
 
             <h3>
                 Electronics
             </h3>
 
+
         </div>
 
 
         <div class="category">
+
 
             <div class="category-icon">
                 💻
             </div>
 
+
             <h3>
                 Computers
             </h3>
+
 
         </div>
 
 
         <div class="category">
+
 
             <div class="category-icon">
                 👕
             </div>
 
+
             <h3>
                 Fashion
             </h3>
+
 
         </div>
 
 
         <div class="category">
+
 
             <div class="category-icon">
                 👟
             </div>
 
+
             <h3>
                 Shoes
             </h3>
+
 
         </div>
 
 
         <div class="category">
+
 
             <div class="category-icon">
                 👜
             </div>
 
+
             <h3>
                 Bags
             </h3>
+
 
         </div>
 
 
         <div class="category">
+
 
             <div class="category-icon">
                 💄
             </div>
 
+
             <h3>
                 Beauty
             </h3>
+
 
         </div>
 
 
         <div class="category">
+
 
             <div class="category-icon">
                 🏠
             </div>
 
+
             <h3>
                 Home
             </h3>
+
 
         </div>
 
 
         <div class="category">
 
+
             <div class="category-icon">
                 ⌚
             </div>
 
+
             <h3>
                 Accessories
             </h3>
+
 
         </div>
 
@@ -1270,7 +1380,9 @@
 
 
 
-<!-- PRODUCTS -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
 <section
     class="container"
@@ -1280,13 +1392,18 @@
 
     <div class="section-title">
 
+
         <h2>
             Featured Products
         </h2>
 
+
         <p>
+
             Quality products at affordable prices.
+
         </p>
+
 
     </div>
 
@@ -1308,13 +1425,16 @@
 
                 {% if product.image %}
 
+
                 <img
                     src="{{ product.image.url }}"
                     alt="{{ product.name }}"
                     class="product-image"
                 >
 
+
                 {% else %}
+
 
                 <div
                     class="product-image"
@@ -1329,6 +1449,7 @@
                     🛍️
 
                 </div>
+
 
                 {% endif %}
 
@@ -1383,15 +1504,25 @@
             "
         >
 
+
             <h2>
+
                 No Products Available Yet
+
             </h2>
 
-            <p style="margin-top:10px;color:#777;">
+
+            <p
+                style="
+                    margin-top:10px;
+                    color:#777;
+                "
+            >
 
                 New products will appear here soon.
 
             </p>
+
 
         </div>
 
@@ -1406,7 +1537,9 @@
 
 
 
-<!-- FEATURES -->
+<!-- =========================
+     FEATURES
+========================= -->
 
 <section class="container">
 
@@ -1416,72 +1549,99 @@
 
         <div class="feature">
 
+
             <div class="feature-icon">
                 🛍️
             </div>
+
 
             <h3>
                 Quality Products
             </h3>
 
+
             <p>
+
                 Shop quality products
                 from our store.
+
             </p>
+
 
         </div>
 
 
+
         <div class="feature">
+
 
             <div class="feature-icon">
                 💳
             </div>
 
+
             <h3>
                 Secure Payments
             </h3>
 
+
             <p>
+
                 Convenient payment
                 options available.
+
             </p>
+
 
         </div>
 
 
+
         <div class="feature">
+
 
             <div class="feature-icon">
                 📦
             </div>
 
+
             <h3>
                 Easy Ordering
             </h3>
 
+
             <p>
+
                 Order online quickly
                 and easily.
+
             </p>
+
 
         </div>
 
 
+
         <div class="feature">
+
 
             <div class="feature-icon">
                 💬
             </div>
 
+
             <h3>
                 WhatsApp Support
             </h3>
 
+
             <p>
+
                 Contact us anytime
                 for assistance.
+
             </p>
+
 
         </div>
 
@@ -1493,7 +1653,9 @@
 
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT US
+========================= -->
 
 <section
     class="container"
@@ -1505,11 +1667,14 @@
 
 
         <h2>
+
             About Idrissah Online Shop
+
         </h2>
 
 
         <p>
+
 
             <strong>
                 Idrissah Online Shop
@@ -1518,57 +1683,85 @@
             is your trusted online marketplace
             based in Dar es Salaam, Tanzania.
 
+
             We provide quality products,
             affordable prices and convenient
             online ordering.
+
 
         </p>
 
 
         <p>
 
+
             Our goal is to make shopping
             easier and more convenient
             for customers across Tanzania.
+
 
         </p>
 
 
 
-        <!-- LOCATION -->
+        <!-- MAIN BRANCH LOCATION -->
+
 
         <div class="location-box">
 
 
             <h3>
+
                 📍 Our Main Branch
+
             </h3>
 
 
             <p>
 
+
                 <strong>
+
                     Sinza Kamanyola
+
                 </strong>
 
+
                 <br>
+
+
+                <strong>
+
+                    Opposite MACK Quality
+
+                </strong>
+
+
+                <br>
+
 
                 Dar es Salaam,
 
+
                 <br>
 
+
                 Tanzania
+
 
             </p>
 
 
+
             <a
-                href="https://www.google.com/maps/search/?api=1&query=Sinza+Kamanyola+Dar+es+Salaam+Tanzania"
+                href="https://www.google.com/maps/search/?api=1&query=MACK+Quality+Sinza+Kamanyola+Dar+es+Salaam+Tanzania"
                 target="_blank"
                 class="map-button"
             >
 
+
                 🗺️ View Our Location on Google Maps
+
 
             </a>
 
@@ -1583,7 +1776,9 @@
 
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section
     class="contact"
@@ -1592,16 +1787,21 @@
 
 
     <h2>
+
         Contact Idrissah Online Shop
+
     </h2>
 
 
     <p>
 
+
         Need help with your order?
+
 
         Contact us directly by phone
         or WhatsApp.
+
 
     </p>
 
@@ -1610,19 +1810,29 @@
     <div class="contact-buttons">
 
 
+        <!-- CALL NUMBER 1 -->
+
+
         <a
             href="tel:+255689435698"
             class="contact-button call-button"
         >
 
+
             📞 Call Us
+
 
             <br>
 
+
             +255 689 435 698
+
 
         </a>
 
+
+
+        <!-- CALL NUMBER 2 -->
 
 
         <a
@@ -1630,14 +1840,21 @@
             class="contact-button call-button"
         >
 
+
             📞 Call Us
+
 
             <br>
 
+
             +255 791 338 080
+
 
         </a>
 
+
+
+        <!-- WHATSAPP NUMBER 1 -->
 
 
         <a
@@ -1646,14 +1863,21 @@
             class="contact-button whatsapp-button"
         >
 
+
             💬 WhatsApp
+
 
             <br>
 
+
             +255 689 435 698
+
 
         </a>
 
+
+
+        <!-- WHATSAPP NUMBER 2 -->
 
 
         <a
@@ -1662,11 +1886,15 @@
             class="contact-button whatsapp-button"
         >
 
+
             💬 WhatsApp
+
 
             <br>
 
+
             +255 791 338 080
+
 
         </a>
 
@@ -1678,7 +1906,9 @@
 
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1687,6 +1917,7 @@
 
 
         <!-- BRAND -->
+
 
         <div class="footer-column">
 
@@ -1699,17 +1930,22 @@
 
 
             <h3>
+
                 IDRISSAH ONLINE SHOP
+
             </h3>
 
 
             <p>
 
+
                 Your trusted online marketplace.
+
 
                 Discover quality products,
                 great prices and easy ordering
                 from anywhere.
+
 
             </p>
 
@@ -1720,36 +1956,49 @@
 
         <!-- QUICK LINKS -->
 
+
         <div class="footer-column">
 
 
             <h3>
+
                 Quick Links
+
             </h3>
 
 
             <a href="/">
+
                 Home
+
             </a>
 
 
             <a href="#categories">
+
                 Categories
+
             </a>
 
 
             <a href="#products">
+
                 Products
+
             </a>
 
 
             <a href="#about">
+
                 About Us
+
             </a>
 
 
             <a href="#contact">
+
                 Customer Service
+
             </a>
 
 
@@ -1759,29 +2008,46 @@
 
         <!-- LOCATION -->
 
+
         <div class="footer-column">
 
 
             <h3>
+
                 Our Location
+
             </h3>
 
 
             <p>
 
+
                 📍 Main Branch:
 
+
                 <br>
+
 
                 Sinza Kamanyola
 
+
                 <br>
+
+
+                Opposite MACK Quality
+
+
+                <br>
+
 
                 Dar es Salaam
 
+
                 <br>
 
+
                 Tanzania
+
 
             </p>
 
@@ -1790,11 +2056,13 @@
 
 
             <a
-                href="https://www.google.com/maps/search/?api=1&query=Sinza+Kamanyola+Dar+es+Salaam+Tanzania"
+                href="https://www.google.com/maps/search/?api=1&query=MACK+Quality+Sinza+Kamanyola+Dar+es+Salaam+Tanzania"
                 target="_blank"
             >
 
+
                 🗺️ Get Directions
+
 
             </a>
 
@@ -1805,24 +2073,35 @@
 
         <!-- CONTACT -->
 
+
         <div class="footer-column">
 
 
             <h3>
+
                 Contact Us
+
             </h3>
 
 
-            <a href="tel:+255689435698">
+            <a
+                href="tel:+255689435698"
+            >
+
 
                 📞 +255 689 435 698
+
 
             </a>
 
 
-            <a href="tel:+255791338080">
+            <a
+                href="tel:+255791338080"
+            >
+
 
                 📞 +255 791 338 080
+
 
             </a>
 
@@ -1835,7 +2114,9 @@
                 target="_blank"
             >
 
+
                 💬 WhatsApp
+
 
             </a>
 
@@ -1845,7 +2126,9 @@
                 target="_blank"
             >
 
+
                 💬 WhatsApp
+
 
             </a>
 
@@ -1859,15 +2142,24 @@
 
     <div class="copyright">
 
+
         © 2026 Idrissah Online Shop.
+
 
         All Rights Reserved.
 
+
         <br>
+
 
         Quality Products • Affordable Prices
 
-        • Sinza Kamanyola, Dar es Salaam, Tanzania
+
+        • Sinza Kamanyola, Opposite MACK Quality,
+
+
+        Dar es Salaam, Tanzania
+
 
     </div>
 

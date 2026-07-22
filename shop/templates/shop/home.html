@@ -80,7 +80,7 @@
 
             background: white;
 
-            padding: 18px 5%;
+            padding: 15px 5%;
 
             display: flex;
 
@@ -116,9 +116,9 @@
 
         .logo-area img {
 
-            width: 65px;
+            width: 70px;
 
-            height: 65px;
+            height: 70px;
 
             object-fit: contain;
 
@@ -139,6 +139,8 @@
             font-size: 12px;
 
             color: #666;
+
+            margin-top: 4px;
 
         }
 
@@ -270,8 +272,8 @@
             background:
 
                 linear-gradient(
-                    rgba(0,0,0,0.60),
-                    rgba(0,0,0,0.60)
+                    rgba(0,0,0,0.62),
+                    rgba(0,0,0,0.62)
                 ),
 
                 url("{% static 'shop/images/logo.png' %}");
@@ -299,7 +301,7 @@
 
             color: white;
 
-            max-width: 800px;
+            max-width: 850px;
 
         }
 
@@ -668,7 +670,7 @@
 
         .location-box h3 {
 
-            margin-bottom: 10px;
+            margin-bottom: 12px;
 
         }
 
@@ -684,7 +686,7 @@
 
             display: inline-block;
 
-            margin-top: 15px;
+            margin-top: 18px;
 
             background: #ff6600;
 
@@ -718,7 +720,7 @@
 
             color: white;
 
-            padding: 45px 20px;
+            padding: 50px 20px;
 
             text-align: center;
 
@@ -768,6 +770,8 @@
 
             font-weight: bold;
 
+            min-width: 190px;
+
         }
 
 
@@ -778,9 +782,23 @@
         }
 
 
+        .call-button:hover {
+
+            background: #0069d9;
+
+        }
+
+
         .whatsapp-button {
 
             background: #25d366;
+
+        }
+
+
+        .whatsapp-button:hover {
+
+            background: #1ebe5d;
 
         }
 
@@ -854,6 +872,8 @@
 
             width: 100px;
 
+            height: auto;
+
             margin-bottom: 15px;
 
         }
@@ -872,6 +892,8 @@
 
             color: #888;
 
+            line-height: 1.8;
+
         }
 
 
@@ -881,6 +903,7 @@
 
         @media
         (max-width: 900px) {
+
 
             header {
 
@@ -929,6 +952,7 @@
         @media
         (max-width: 600px) {
 
+
             .top-bar {
 
                 flex-direction: column;
@@ -936,6 +960,29 @@
                 gap: 8px;
 
                 text-align: center;
+
+            }
+
+
+            header {
+
+                padding: 15px;
+
+            }
+
+
+            .logo-area img {
+
+                width: 55px;
+
+                height: 55px;
+
+            }
+
+
+            .logo-text h1 {
+
+                font-size: 18px;
 
             }
 
@@ -981,6 +1028,13 @@
             .footer-grid {
 
                 grid-template-columns: 1fr;
+
+            }
+
+
+            .about {
+
+                padding: 25px;
 
             }
 
@@ -1049,12 +1103,16 @@
 
 
             <h1>
+
                 Idrissah Online Shop
+
             </h1>
 
 
             <p>
+
                 Your Trusted Online Marketplace
+
             </p>
 
 
@@ -1247,128 +1305,104 @@
 
         <div class="category">
 
-
             <div class="category-icon">
                 📱
             </div>
-
 
             <h3>
                 Electronics
             </h3>
 
-
         </div>
 
 
         <div class="category">
-
 
             <div class="category-icon">
                 💻
             </div>
 
-
             <h3>
                 Computers
             </h3>
-
 
         </div>
 
 
         <div class="category">
-
 
             <div class="category-icon">
                 👕
             </div>
 
-
             <h3>
                 Fashion
             </h3>
-
 
         </div>
 
 
         <div class="category">
-
 
             <div class="category-icon">
                 👟
             </div>
 
-
             <h3>
                 Shoes
             </h3>
-
 
         </div>
 
 
         <div class="category">
-
 
             <div class="category-icon">
                 👜
             </div>
 
-
             <h3>
                 Bags
             </h3>
-
 
         </div>
 
 
         <div class="category">
-
 
             <div class="category-icon">
                 💄
             </div>
 
-
             <h3>
                 Beauty
             </h3>
-
 
         </div>
 
 
         <div class="category">
-
 
             <div class="category-icon">
                 🏠
             </div>
 
-
             <h3>
                 Home
             </h3>
-
 
         </div>
 
 
         <div class="category">
 
-
             <div class="category-icon">
                 ⌚
             </div>
 
-
             <h3>
                 Accessories
             </h3>
-
 
         </div>
 
@@ -1394,7 +1428,9 @@
 
 
         <h2>
+
             Featured Products
+
         </h2>
 
 
@@ -1704,7 +1740,7 @@
 
 
 
-        <!-- MAIN BRANCH LOCATION -->
+        <!-- EXACT MAIN BRANCH LOCATION -->
 
 
         <div class="location-box">
@@ -1754,14 +1790,12 @@
 
 
             <a
-                href="https://www.google.com/maps/search/?api=1&query=MACK+Quality+Sinza+Kamanyola+Dar+es+Salaam+Tanzania"
+                href="https://maps.app.goo.gl/H8VhjrB1pS2ZHtku8"
                 target="_blank"
                 class="map-button"
             >
 
-
-                🗺️ View Our Location on Google Maps
-
+                🗺️ View Our Exact Location
 
             </a>
 
@@ -1795,13 +1829,10 @@
 
     <p>
 
-
         Need help with your order?
-
 
         Contact us directly by phone
         or WhatsApp.
-
 
     </p>
 
@@ -1818,15 +1849,11 @@
             class="contact-button call-button"
         >
 
-
             📞 Call Us
-
 
             <br>
 
-
             +255 689 435 698
-
 
         </a>
 
@@ -1840,15 +1867,11 @@
             class="contact-button call-button"
         >
 
-
             📞 Call Us
-
 
             <br>
 
-
             +255 791 338 080
-
 
         </a>
 
@@ -1858,20 +1881,16 @@
 
 
         <a
-            href="https://wa.me/255689435698"
+            href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop,%20I%20need%20assistance."
             target="_blank"
             class="contact-button whatsapp-button"
         >
 
-
             💬 WhatsApp
-
 
             <br>
 
-
             +255 689 435 698
-
 
         </a>
 
@@ -1881,20 +1900,16 @@
 
 
         <a
-            href="https://wa.me/255791338080"
+            href="https://wa.me/255791338080?text=Hello%20Idrissah%20Online%20Shop,%20I%20need%20assistance."
             target="_blank"
             class="contact-button whatsapp-button"
         >
 
-
             💬 WhatsApp
-
 
             <br>
 
-
             +255 791 338 080
-
 
         </a>
 
@@ -1924,7 +1939,7 @@
 
             <img
                 src="{% static 'shop/images/logo.png' %}"
-                alt="Idrissah Online Shop"
+                alt="Idrissah Online Shop Logo"
                 class="footer-logo"
             >
 
@@ -1937,7 +1952,6 @@
 
 
             <p>
-
 
                 Your trusted online marketplace.
 
@@ -2021,33 +2035,23 @@
 
             <p>
 
-
                 📍 Main Branch:
 
-
                 <br>
-
 
                 Sinza Kamanyola
 
-
                 <br>
-
 
                 Opposite MACK Quality
 
-
                 <br>
-
 
                 Dar es Salaam
 
-
                 <br>
 
-
                 Tanzania
-
 
             </p>
 
@@ -2056,13 +2060,11 @@
 
 
             <a
-                href="https://www.google.com/maps/search/?api=1&query=MACK+Quality+Sinza+Kamanyola+Dar+es+Salaam+Tanzania"
+                href="https://maps.app.goo.gl/H8VhjrB1pS2ZHtku8"
                 target="_blank"
             >
 
-
-                🗺️ Get Directions
-
+                🗺️ Get Directions to Our Branch
 
             </a>
 
@@ -2088,9 +2090,7 @@
                 href="tel:+255689435698"
             >
 
-
                 📞 +255 689 435 698
-
 
             </a>
 
@@ -2099,9 +2099,7 @@
                 href="tel:+255791338080"
             >
 
-
                 📞 +255 791 338 080
-
 
             </a>
 
@@ -2114,9 +2112,7 @@
                 target="_blank"
             >
 
-
                 💬 WhatsApp
-
 
             </a>
 
@@ -2126,9 +2122,7 @@
                 target="_blank"
             >
 
-
                 💬 WhatsApp
-
 
             </a>
 
@@ -2155,10 +2149,10 @@
         Quality Products • Affordable Prices
 
 
-        • Sinza Kamanyola, Opposite MACK Quality,
+        • Sinza Kamanyola • Opposite MACK Quality
 
 
-        Dar es Salaam, Tanzania
+        • Dar es Salaam, Tanzania
 
 
     </div>

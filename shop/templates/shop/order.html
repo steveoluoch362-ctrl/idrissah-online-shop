@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +5,11 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>
-        Order {{ product.name }} | IDRISSAH ONLINE SHOP
+        Complete Your Order | Idrissah Online Shop
     </title>
 
 
@@ -21,670 +17,390 @@
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
 
         body {
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+            margin: 0;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #f8fafc,
-                    #eef2ff
-                );
+            font-family: Arial, sans-serif;
 
-            color: #1f2937;
+            background: #f4f6f8;
 
-            min-height: 100vh;
+            color: #222;
 
         }
 
 
-        /* =========================
-           HEADER
-        ========================= */
+        .header {
 
-        header {
-
-            background: #111827;
+            background: #111;
 
             color: white;
-
-            padding: 12px 7%;
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items: center;
-
-            gap: 25px;
-
-            flex-wrap: wrap;
-
-        }
-
-
-        /* BRAND */
-
-        .brand {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-        }
-
-
-        /* LOGO */
-
-        .brand img {
-
-            width: 95px;
-
-            height: 95px;
-
-            object-fit: contain;
-
-            background: white;
-
-            border-radius: 14px;
-
-            padding: 5px;
-
-            box-shadow:
-                0 4px 15px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.3
-                );
-
-        }
-
-
-        /* BRAND TEXT */
-
-        .brand-text {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 5px;
-
-        }
-
-
-        .brand-text h1 {
-
-            font-size: 25px;
-
-            letter-spacing: 0.5px;
-
-        }
-
-
-        .brand-text span {
-
-            font-size: 12px;
-
-            color: #d1d5db;
-
-            letter-spacing: 1px;
-
-        }
-
-
-        /* BACK BUTTON */
-
-        .back-shop {
-
-            color: white;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            padding: 11px 16px;
-
-            border-radius: 8px;
-
-            transition: 0.3s;
-
-        }
-
-
-        .back-shop:hover {
-
-            background: #2563eb;
-
-        }
-
-
-        /* =========================
-           MAIN CONTAINER
-        ========================= */
-
-        .container {
-
-            max-width: 1100px;
-
-            margin: 45px auto;
 
             padding: 20px;
-
-        }
-
-
-        .order-layout {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1.2fr;
-
-            gap: 30px;
-
-        }
-
-
-        /* =========================
-           PRODUCT CARD
-        ========================= */
-
-        .product-card {
-
-            background: white;
-
-            padding: 25px;
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.08
-                );
-
-            height: fit-content;
-
-            position: sticky;
-
-            top: 20px;
-
-        }
-
-
-        .product-card img {
-
-            width: 100%;
-
-            height: 320px;
-
-            object-fit: cover;
-
-            border-radius: 14px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .product-card h2 {
-
-            font-size: 27px;
-
-            margin-bottom: 12px;
-
-            color: #111827;
-
-        }
-
-
-        .price {
-
-            color: #2563eb;
-
-            font-size: 25px;
-
-            font-weight: bold;
-
-        }
-
-
-        /* =========================
-           FORM CARD
-        ========================= */
-
-        .form-card {
-
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.08
-                );
-
-        }
-
-
-        .form-card h2 {
-
-            font-size: 29px;
-
-            margin-bottom: 8px;
-
-            color: #111827;
-
-        }
-
-
-        .subtitle {
-
-            color: #6b7280;
-
-            margin-bottom: 25px;
-
-            line-height: 1.5;
-
-        }
-
-
-        /* =========================
-           FORM
-        ========================= */
-
-        form p {
-
-            margin-bottom: 18px;
-
-        }
-
-
-        form label {
-
-            display: block;
-
-            font-weight: bold;
-
-            margin-bottom: 7px;
-
-        }
-
-
-        form input,
-        form select {
-
-            width: 100%;
-
-            padding: 14px;
-
-            border:
-                1px solid
-                #d1d5db;
-
-            border-radius: 9px;
-
-            font-size: 16px;
-
-            background: white;
-
-        }
-
-
-        form input:focus,
-        form select:focus {
-
-            outline: none;
-
-            border-color:
-                #2563eb;
-
-            box-shadow:
-                0 0 0 3px
-                rgba(
-                    37,
-                    99,
-                    235,
-                    0.1
-                );
-
-        }
-
-
-        /* =========================
-           PAYMENT
-        ========================= */
-
-        .payment-box {
-
-            margin-top: 25px;
-
-            padding: 20px;
-
-            background: #f8fafc;
-
-            border:
-                1px solid
-                #e5e7eb;
-
-            border-radius: 12px;
-
-        }
-
-
-        .payment-box h3 {
-
-            margin-bottom: 10px;
-
-            font-size: 21px;
-
-        }
-
-
-        .payment-box > p {
-
-            color: #6b7280;
-
-        }
-
-
-        .payment-info {
-
-            display: none;
-
-            margin: 15px 0;
-
-            padding: 18px;
-
-            background: white;
-
-            border-radius: 10px;
-
-            border-left:
-                5px solid
-                #2563eb;
-
-        }
-
-
-        .payment-info strong {
-
-            display: block;
-
-            margin-bottom: 5px;
-
-        }
-
-
-        .payment-number {
-
-            font-size: 21px;
-
-            font-weight: bold;
-
-            color: #2563eb;
-
-            margin: 8px 0;
-
-        }
-
-
-        .payment-instruction {
-
-            color: #555;
-
-            line-height: 1.5;
-
-        }
-
-
-        .transaction-note {
-
-            font-size: 14px;
-
-            color: #6b7280;
-
-            line-height: 1.5;
-
-        }
-
-
-        /* =========================
-           ORDER BUTTON
-        ========================= */
-
-        .place-order {
-
-            width: 100%;
-
-            margin-top: 20px;
-
-            padding: 16px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #2563eb,
-                    #1d4ed8
-                );
-
-            color: white;
-
-            font-size: 17px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-
-        }
-
-
-        .place-order:hover {
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 7px 20px
-                rgba(
-                    37,
-                    99,
-                    235,
-                    0.3
-                );
-
-        }
-
-
-        /* =========================
-           WHATSAPP
-        ========================= */
-
-        .whatsapp-section {
-
-            margin-top: 30px;
-
-            padding-top: 25px;
-
-            border-top:
-                1px solid
-                #e5e7eb;
 
             text-align: center;
 
         }
 
 
-        .whatsapp-section h3 {
+        .header h1 {
 
-            margin-bottom: 8px;
+            margin: 0;
 
-        }
-
-
-        .whatsapp-section p {
-
-            color: #6b7280;
-
-            margin-bottom: 18px;
+            font-size: 26px;
 
         }
 
 
-        .whatsapp-buttons {
+        .container {
 
-            display: grid;
+            max-width: 1000px;
 
-            grid-template-columns:
-                repeat(
-                    2,
-                    1fr
-                );
+            margin: 30px auto;
 
-            gap: 12px;
+            padding: 20px;
 
         }
 
 
-        .whatsapp-btn {
+        .back {
 
-            padding: 13px;
+            display: inline-block;
 
-            color: white;
+            margin-bottom: 20px;
 
             text-decoration: none;
 
-            border-radius: 9px;
+            color: #111;
 
             font-weight: bold;
 
         }
 
 
-        .salha {
+        .order-grid {
 
-            background: #16a34a;
+            display: grid;
 
-        }
+            grid-template-columns: 1fr 1fr;
 
-
-        .idrissah {
-
-            background: #128c7e;
+            gap: 25px;
 
         }
 
 
-        /* =========================
-           ERROR
-        ========================= */
+        .card {
 
-        .errorlist {
+            background: white;
 
-            color: #dc2626;
+            padding: 25px;
 
-            margin-bottom: 5px;
+            border-radius: 15px;
 
-            list-style: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
+        .card h2 {
 
-        @media (max-width: 750px) {
+            margin-top: 0;
 
+            font-size: 24px;
 
-            header {
-
-                justify-content: center;
-
-                text-align: center;
-
-            }
+        }
 
 
-            .brand {
+        .product-name {
 
-                flex-direction: column;
+            font-size: 25px;
 
-                gap: 10px;
+            font-weight: bold;
 
-            }
+            margin-bottom: 10px;
 
-
-            .brand img {
-
-                width: 110px;
-
-                height: 110px;
-
-            }
+        }
 
 
-            .brand-text h1 {
+        .price {
 
-                font-size: 21px;
+            font-size: 26px;
 
-            }
+            font-weight: bold;
+
+            color: green;
+
+            margin: 15px 0;
+
+        }
 
 
-            .order-layout {
+        .payment-total {
+
+            background: #f1f8f3;
+
+            border: 2px solid #25a244;
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+            margin: 20px 0;
+
+            text-align: center;
+
+        }
+
+
+        .payment-total span {
+
+            display: block;
+
+            font-size: 14px;
+
+            color: #555;
+
+        }
+
+
+        .payment-total strong {
+
+            font-size: 30px;
+
+            color: #008000;
+
+        }
+
+
+        .payment-box {
+
+            border: 1px solid #ddd;
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .payment-box h3 {
+
+            margin-top: 0;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .mpesa {
+
+            border-left: 6px solid #e60000;
+
+        }
+
+
+        .airtel {
+
+            border-left: 6px solid #e60000;
+
+        }
+
+
+        .payment-number {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin: 10px 0;
+
+        }
+
+
+        .payment-name {
+
+            color: #555;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .copy-btn {
+
+            border: none;
+
+            background: #111;
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+
+        .copy-btn:hover {
+
+            background: #333;
+
+        }
+
+
+        .app-btn {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 11px 15px;
+
+            background: #25D366;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+        }
+
+
+        .instructions {
+
+            background: #fff8e1;
+
+            border-left: 5px solid #ffb300;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            margin: 20px 0;
+
+            line-height: 1.6;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 7px;
+
+            font-size: 16px;
+
+        }
+
+
+        .submit-btn {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #111;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        .submit-btn:hover {
+
+            background: #333;
+
+        }
+
+
+        .whatsapp {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            padding: 14px;
+
+            background: #25D366;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+        }
+
+
+        .warning {
+
+            color: #b00020;
+
+            font-size: 14px;
+
+            margin-top: 10px;
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .order-grid {
 
                 grid-template-columns: 1fr;
 
             }
 
+            .container {
 
-            .product-card {
-
-                position: static;
-
-            }
-
-
-            .product-card img {
-
-                height: 280px;
-
-            }
-
-
-            .whatsapp-buttons {
-
-                grid-template-columns: 1fr;
+                padding: 15px;
 
             }
 
@@ -698,107 +414,276 @@
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<div class="header">
 
-<header>
+    <h1>
 
+        Idrissah Online Shop
 
-    <div class="brand">
+    </h1>
 
-
-        <img
-
-            src="{% static 'shop/images/logo.png' %}"
-
-            alt="IDRISSAH TECHNOLOGIES Logo"
-
-        >
+</div>
 
 
-        <div class="brand-text">
-
-
-            <h1>
-
-                IDRISSAH ONLINE SHOP
-
-            </h1>
-
-
-            <span>
-
-                Powered by IDRISSAH TECHNOLOGIES
-
-            </span>
-
-
-        </div>
-
-
-    </div>
-
-
-    <a
-
-        href="/"
-
-        class="back-shop"
-
-    >
-
-        ← Back to Shop
-
-    </a>
-
-
-</header>
-
-
-
-<!-- =========================
-     MAIN
-========================= -->
 
 <div class="container">
 
 
-    <div class="order-layout">
+    <a href="/" class="back">
+
+        ← Back to Products
+
+    </a>
 
 
-        <!-- PRODUCT -->
 
-        <div class="product-card">
-
-
-            {% if product.image %}
+    <div class="order-grid">
 
 
-                <img
 
-                    src="{{ product.image.url }}"
-
-                    alt="{{ product.name }}"
-
-                >
+        <!-- PRODUCT AND PAYMENT -->
 
 
-            {% endif %}
+        <div class="card">
 
 
             <h2>
 
-                {{ product.name }}
+                Your Order
 
             </h2>
 
 
-            <p class="price">
+            <div class="product-name">
 
-                TZS {{ product.price }}
+                {{ product.name }}
 
-            </p>
+            </div>
+
+
+            <div class="price">
+
+                TSh {{ product.price }}
+
+            </div>
+
+
+            {% if product.description %}
+
+                <p>
+
+                    {{ product.description }}
+
+                </p>
+
+            {% endif %}
+
+
+
+            <div class="payment-total">
+
+                <span>
+
+                    Amount to Pay
+
+                </span>
+
+                <strong id="totalAmount">
+
+                    TSh {{ product.price }}
+
+                </strong>
+
+            </div>
+
+
+
+            <h2>
+
+                Payment Methods
+
+            </h2>
+
+
+
+            <!-- MPESA -->
+
+
+            <div class="payment-box mpesa">
+
+
+                <h3>
+
+                    🔴 Vodacom M-Pesa
+
+                </h3>
+
+
+                <div class="payment-name">
+
+                    Name: MODESTA WELIMA BEDA
+
+                </div>
+
+
+                <div class="payment-number"
+                     id="mpesaNumber">
+
+                    +255689435698
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="copy-btn"
+                    onclick="copyNumber('mpesaNumber')"
+                >
+
+                    📋 Copy M-Pesa Number
+
+                </button>
+
+
+                <br>
+
+
+                <a
+                    href="https://wa.me/255689435698"
+                    target="_blank"
+                    class="app-btn"
+                >
+
+                    📱 Contact M-Pesa Number
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- AIRTEL -->
+
+
+            <div class="payment-box airtel">
+
+
+                <h3>
+
+                    🔴 Airtel Money
+
+                </h3>
+
+
+                <div class="payment-name">
+
+                    Name: REGINA YUSUPH
+
+                </div>
+
+
+                <div class="payment-number"
+                     id="airtelNumber">
+
+                    +255791338080
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="copy-btn"
+                    onclick="copyNumber('airtelNumber')"
+                >
+
+                    📋 Copy Airtel Number
+
+                </button>
+
+
+                <br>
+
+
+                <a
+                    href="https://wa.me/255791338080"
+                    target="_blank"
+                    class="app-btn"
+                >
+
+                    📱 Contact Airtel Number
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="instructions">
+
+
+                <strong>
+
+                    How to Pay
+
+                </strong>
+
+
+                <ol>
+
+                    <li>
+
+                        Copy the payment number above.
+
+                    </li>
+
+
+                    <li>
+
+                        Open your M-Pesa or Airtel Money App.
+
+                    </li>
+
+
+                    <li>
+
+                        Send the exact amount shown above.
+
+                    </li>
+
+
+                    <li>
+
+                        Keep your payment Transaction ID.
+
+                    </li>
+
+
+                    <li>
+
+                        Enter the Transaction ID in the order form.
+
+                    </li>
+
+
+                    <li>
+
+                        Submit your order for verification.
+
+                    </li>
+
+                </ol>
+
+
+                <div class="warning">
+
+                    ⚠️ Your order will remain pending until the payment is verified by the admin.
+
+                </div>
+
+
+            </div>
 
 
         </div>
@@ -807,23 +692,15 @@
 
         <!-- ORDER FORM -->
 
-        <div class="form-card">
+
+        <div class="card">
 
 
             <h2>
 
-                Complete Your Order
+                Customer Details
 
             </h2>
-
-
-            <p class="subtitle">
-
-                Enter your details below
-                and complete your payment
-                to submit your order.
-
-            </p>
 
 
             <form method="POST">
@@ -832,234 +709,16 @@
                 {% csrf_token %}
 
 
-                {{ form.non_field_errors }}
-
-
-                <p>
-
-                    {{ form.customer_name.errors }}
-
-                    <label>
-
-                        Customer Name
-
-                    </label>
-
-                    {{ form.customer_name }}
-
-                </p>
-
-
-                <p>
-
-                    {{ form.phone_number.errors }}
-
-                    <label>
-
-                        Phone Number
-
-                    </label>
-
-                    {{ form.phone_number }}
-
-                </p>
-
-
-                <p>
-
-                    {{ form.location.errors }}
-
-                    <label>
-
-                        Delivery Location
-
-                    </label>
-
-                    {{ form.location }}
-
-                </p>
-
-
-                <p>
-
-                    {{ form.quantity.errors }}
-
-                    <label>
-
-                        Quantity
-
-                    </label>
-
-                    {{ form.quantity }}
-
-                </p>
-
-
-
-                <!-- PAYMENT -->
-
-                <div class="payment-box">
-
-
-                    <h3>
-
-                        💳 Payment Information
-
-                    </h3>
-
-
-                    <p>
-
-                        Choose your payment method
-                        and complete payment.
-
-                    </p>
-
-
-                    <p>
-
-                        {{ form.payment_method.errors }}
-
-                        <label>
-
-                            Payment Method
-
-                        </label>
-
-                        {{ form.payment_method }}
-
-                    </p>
-
-
-
-                    <!-- MPESA -->
-
-                    <div
-
-                        id="mpesa-info"
-
-                        class="payment-info"
-
-                    >
-
-
-                        <strong>
-
-                            M-Pesa
-
-                        </strong>
-
-
-                        <div class="payment-number">
-
-                            {{ mpesa_number }}
-
-                        </div>
-
-
-                        <strong>
-
-                            {{ mpesa_name }}
-
-                        </strong>
-
-
-                        <p class="payment-instruction">
-
-                            Send the exact order amount
-                            to the M-Pesa number above.
-
-                        </p>
-
-
-                    </div>
-
-
-
-                    <!-- AIRTEL -->
-
-                    <div
-
-                        id="airtel-info"
-
-                        class="payment-info"
-
-                    >
-
-
-                        <strong>
-
-                            Airtel Money
-
-                        </strong>
-
-
-                        <div class="payment-number">
-
-                            {{ airtel_number }}
-
-                        </div>
-
-
-                        <strong>
-
-                            {{ airtel_name }}
-
-                        </strong>
-
-
-                        <p class="payment-instruction">
-
-                            Send the exact order amount
-                            to the Airtel Money number above.
-
-                        </p>
-
-
-                    </div>
-
-
-
-                    <!-- TRANSACTION ID -->
-
-                    <p>
-
-                        {{ form.transaction_id.errors }}
-
-                        <label>
-
-                            Payment Transaction ID
-
-                        </label>
-
-                        {{ form.transaction_id }}
-
-                    </p>
-
-
-                    <p class="transaction-note">
-
-                        After making payment,
-                        enter your transaction ID.
-                        Your order will be verified
-                        by the administration team.
-
-                    </p>
-
-
-                </div>
+                {{ form.as_p }}
 
 
 
                 <button
-
                     type="submit"
-
-                    class="place-order"
-
+                    class="submit-btn"
                 >
 
-                    🛒 Submit Paid Order
+                    💳 Submit Order for Payment Verification
 
                 </button>
 
@@ -1068,64 +727,15 @@
 
 
 
-            <!-- WHATSAPP -->
+            <a
+                href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop%2C%20I%20have%20made%20a%20payment%20for%20{{ product.name }}.%20Please%20verify%20my%20payment."
+                target="_blank"
+                class="whatsapp"
+            >
 
-            <div class="whatsapp-section">
+                💬 Send Payment Confirmation on WhatsApp
 
-
-                <h3>
-
-                    📱 Need Help?
-
-                </h3>
-
-
-                <p>
-
-                    Contact us on WhatsApp
-                    if you need assistance
-                    with your order.
-
-                </p>
-
-
-                <div class="whatsapp-buttons">
-
-
-                    <a
-
-                        href="https://wa.me/255689435698"
-
-                        target="_blank"
-
-                        class="whatsapp-btn salha"
-
-                    >
-
-                        💬 Chat with MRS SALHA
-
-                    </a>
-
-
-                    <a
-
-                        href="https://wa.me/255791338080"
-
-                        target="_blank"
-
-                        class="whatsapp-btn idrissah"
-
-                    >
-
-                        💬 Chat with MR IDRISSAH
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
+            </a>
 
 
         </div>
@@ -1141,78 +751,37 @@
 <script>
 
 
-    const paymentMethod =
-
-        document.getElementById(
-            "id_payment_method"
-        );
+function copyNumber(elementId) {
 
 
-    const mpesaInfo =
-
-        document.getElementById(
-            "mpesa-info"
-        );
-
-
-    const airtelInfo =
-
-        document.getElementById(
-            "airtel-info"
-        );
+    const number = document
+        .getElementById(elementId)
+        .innerText
+        .trim();
 
 
-    function showPaymentInfo() {
+    navigator.clipboard
+        .writeText(number)
+        .then(function() {
 
 
-        mpesaInfo.style.display =
-            "none";
+            alert(
+                "Payment number copied: " + number
+            );
 
 
-        airtelInfo.style.display =
-            "none";
+        })
+        .catch(function() {
 
 
-        if (
-            paymentMethod &&
-            paymentMethod.value ===
-            "MPESA"
-        ) {
-
-            mpesaInfo.style.display =
-                "block";
-
-        }
+            alert(
+                "Please copy the number manually: " + number
+            );
 
 
-        if (
-            paymentMethod &&
-            paymentMethod.value ===
-            "AIRTEL_MONEY"
-        ) {
+        });
 
-            airtelInfo.style.display =
-                "block";
-
-        }
-
-    }
-
-
-    if (paymentMethod) {
-
-        paymentMethod.addEventListener(
-
-            "change",
-
-            showPaymentInfo
-
-        );
-
-
-        showPaymentInfo();
-
-    }
+}
 
 
 </script>

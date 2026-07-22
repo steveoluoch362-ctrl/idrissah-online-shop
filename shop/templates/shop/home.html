@@ -10,10 +10,14 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Idrissah Online Shop | Your Trusted Online Marketplace</title>
+    <title>
+        Idrissah Online Shop | Your Trusted Online Marketplace
+    </title>
 
-    <meta name="description"
-          content="Shop quality electronics, computers, fashion, shoes, bags, beauty products, home products and accessories at Idrissah Online Shop.">
+    <meta
+        name="description"
+        content="Idrissah Online Shop - Your trusted online marketplace for electronics, computers, fashion, shoes, bags, beauty, home products and accessories."
+    >
 
     <style>
 
@@ -41,16 +45,24 @@
         .top-bar {
             background: #111827;
             color: white;
-            padding: 9px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .top-bar a {
             color: white;
             font-weight: bold;
+        }
+
+        .top-contact {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
 
@@ -77,7 +89,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            min-width: 270px;
+            min-width: 280px;
         }
 
         .brand img {
@@ -102,12 +114,14 @@
         .brand-tagline {
             color: #666;
             font-size: 11px;
-            margin-top: 4px;
+            margin-top: 5px;
             font-weight: bold;
         }
 
 
-        /* SEARCH */
+        /* =========================
+           SEARCH
+        ========================== */
 
         .search-box {
             flex: 1;
@@ -136,7 +150,9 @@
         }
 
 
-        /* ACCOUNT / CART */
+        /* =========================
+           HEADER ACTIONS
+        ========================== */
 
         .header-actions {
             display: flex;
@@ -169,6 +185,7 @@
             display: flex;
             align-items: center;
             gap: 30px;
+            overflow-x: auto;
         }
 
         .navigation a {
@@ -176,6 +193,7 @@
             padding: 14px 5px;
             font-size: 14px;
             font-weight: bold;
+            white-space: nowrap;
         }
 
         .navigation a:hover {
@@ -210,7 +228,7 @@
         }
 
         .hero-content {
-            max-width: 700px;
+            max-width: 720px;
         }
 
         .hero h1 {
@@ -271,7 +289,7 @@
 
 
         /* =========================
-           SECTION TITLE
+           SECTION HEADER
         ========================== */
 
         .section-header {
@@ -298,11 +316,8 @@
 
         .categories {
             display: grid;
-            grid-template-columns:
-                repeat(8, 1fr);
-
+            grid-template-columns: repeat(8, 1fr);
             gap: 15px;
-
             margin-bottom: 60px;
         }
 
@@ -318,9 +333,7 @@
 
         .category:hover {
             transform: translateY(-5px);
-            box-shadow:
-                0 8px 25px
-                rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .category-icon {
@@ -331,6 +344,7 @@
         .category-name {
             font-size: 14px;
             font-weight: bold;
+            color: #222;
         }
 
 
@@ -340,9 +354,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns:
-                repeat(4, 1fr);
-
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
 
@@ -356,9 +368,7 @@
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow:
-                0 10px 30px
-                rgba(0,0,0,0.12);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         .product-image-container {
@@ -468,9 +478,7 @@
 
         .features {
             display: grid;
-            grid-template-columns:
-                repeat(4, 1fr);
-
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-top: 60px;
         }
@@ -514,8 +522,7 @@
             margin: auto;
 
             display: grid;
-            grid-template-columns:
-                2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
 
             gap: 40px;
         }
@@ -550,17 +557,63 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
             color: #bbb;
             font-size: 14px;
+            transition: 0.2s;
         }
 
         .footer-links a:hover {
             color: white;
         }
+
+
+        /* CONTACT BUTTONS */
+
+        .contact-button {
+            display: block;
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            color: white !important;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .contact-call {
+            background: #2563eb;
+        }
+
+        .contact-whatsapp {
+            background: #25D366;
+        }
+
+
+        /* =========================
+           PAYMENT
+        ========================== */
+
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .payment-item {
+            background: #1f2937;
+            padding: 10px;
+            border-radius: 6px;
+            color: #ddd;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           COPYRIGHT
+        ========================== */
 
         .copyright {
             max-width: 1400px;
@@ -574,7 +627,7 @@
 
 
         /* =========================
-           WHATSAPP FLOATING BUTTON
+           FLOATING WHATSAPP
         ========================== */
 
         .whatsapp-float {
@@ -585,8 +638,8 @@
             background: #25D366;
             color: white;
 
-            width: 60px;
-            height: 60px;
+            width: 62px;
+            height: 62px;
 
             border-radius: 50%;
 
@@ -596,11 +649,13 @@
 
             font-size: 30px;
 
-            box-shadow:
-                0 5px 20px
-                rgba(0,0,0,0.25);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
 
             z-index: 2000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
         }
 
 
@@ -611,18 +666,15 @@
         @media (max-width: 1100px) {
 
             .categories {
-                grid-template-columns:
-                    repeat(4, 1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
 
             .products-grid {
-                grid-template-columns:
-                    repeat(3, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .footer-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
         }
@@ -632,8 +684,11 @@
 
             .top-bar {
                 flex-direction: column;
-                gap: 5px;
                 text-align: center;
+            }
+
+            .top-contact {
+                justify-content: center;
             }
 
             .main-header {
@@ -656,9 +711,7 @@
             }
 
             .navigation {
-                overflow-x: auto;
                 gap: 20px;
-                white-space: nowrap;
             }
 
             .hero {
@@ -675,13 +728,11 @@
             }
 
             .categories {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .products-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
             }
 
@@ -698,13 +749,11 @@
             }
 
             .features {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-grid {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
         }
@@ -734,8 +783,7 @@
             }
 
             .products-grid {
-                grid-template-columns:
-                    1fr 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .product-name {
@@ -747,8 +795,7 @@
             }
 
             .features {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
         }
@@ -771,18 +818,23 @@
         Welcome to Idrissah Online Shop
     </div>
 
-    <div>
-        📞
+    <div class="top-contact">
+
         <a href="tel:+255689435698">
-            +255 689 435 698
+            📞 +255 689 435 698
         </a>
+
+        <a href="tel:+255791338080">
+            📞 +255 791 338 080
+        </a>
+
     </div>
 
 </div>
 
 
 <!-- =========================
-     HEADER
+     MAIN HEADER
 ========================== -->
 
 <header class="main-header">
@@ -831,26 +883,34 @@
 
     <div class="header-actions">
 
-        <a href="#" class="header-action">
+        <a
+            href="tel:+255689435698"
+            class="header-action"
+        >
 
             <span class="header-action-icon">
-                👤
+                📞
             </span>
 
-            Account
+            Call Us
 
         </a>
 
 
-        <a href="#" class="header-action">
+        <a
+            href="https://wa.me/255689435698"
+            target="_blank"
+            class="header-action"
+        >
 
             <span class="header-action-icon">
-                🛒
+                💬
             </span>
 
-            Cart
+            WhatsApp
 
         </a>
+
 
     </div>
 
@@ -922,6 +982,7 @@
                 🛍️ Start Shopping
             </a>
 
+
             <a
                 href="https://wa.me/255689435698"
                 target="_blank"
@@ -938,13 +999,15 @@
 
 
 <!-- =========================
-     MAIN
+     MAIN CONTENT
 ========================== -->
 
 <main class="container">
 
 
-    <!-- CATEGORIES -->
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
 
     <section id="categories">
 
@@ -1069,7 +1132,9 @@
     </section>
 
 
-    <!-- PRODUCTS -->
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
 
     <section id="products">
 
@@ -1207,23 +1272,17 @@
 
 
             <div class="empty-products-icon">
-
                 🛍️
-
             </div>
 
 
             <h3>
-
                 No Products Available Yet
-
             </h3>
 
 
             <p>
-
                 New products will appear here soon.
-
             </p>
 
 
@@ -1236,7 +1295,9 @@
     </section>
 
 
-    <!-- FEATURES -->
+    <!-- =========================
+         FEATURES
+    ========================== -->
 
     <section class="features">
 
@@ -1253,7 +1314,7 @@
 
             <p>
                 Shop quality products
-                from our store.
+                from our marketplace.
             </p>
 
         </div>
@@ -1329,6 +1390,8 @@
     <div class="footer-grid">
 
 
+        <!-- ABOUT -->
+
         <div>
 
 
@@ -1359,6 +1422,8 @@
         </div>
 
 
+        <!-- QUICK LINKS -->
+
         <div>
 
             <h3>
@@ -1369,25 +1434,25 @@
 
                 <li>
                     <a href="/">
-                        Home
+                        🏠 Home
                     </a>
                 </li>
 
                 <li>
                     <a href="#categories">
-                        Categories
+                        🏷️ Categories
                     </a>
                 </li>
 
                 <li>
                     <a href="#products">
-                        Products
+                        🛍️ Products
                     </a>
                 </li>
 
                 <li>
                     <a href="#about">
-                        Customer Service
+                        ℹ️ Customer Service
                     </a>
                 </li>
 
@@ -1395,6 +1460,8 @@
 
         </div>
 
+
+        <!-- CONTACT US -->
 
         <div>
 
@@ -1402,47 +1469,99 @@
                 Contact Us
             </h3>
 
+
             <ul class="footer-links">
+
+
+                <!-- CALL NUMBER 1 -->
+
+                <li>
+
+                    <a
+                        href="tel:+255689435698"
+                        class="contact-button contact-call"
+                    >
+
+                        📞 Call Us
+
+                        <br>
+
+                        +255 689 435 698
+
+                    </a>
+
+                </li>
+
+
+                <!-- WHATSAPP NUMBER 1 -->
 
                 <li>
 
                     <a
                         href="https://wa.me/255689435698"
                         target="_blank"
+                        class="contact-button contact-whatsapp"
                     >
 
-                        WhatsApp
+                        💬 WhatsApp
+
+                        <br>
+
+                        +255 689 435 698
 
                     </a>
 
                 </li>
 
+
+                <!-- CALL NUMBER 2 -->
+
                 <li>
 
-                    <a href="tel:+255689435698">
+                    <a
+                        href="tel:+255791338080"
+                        class="contact-button contact-call"
+                    >
 
                         📞 Call Us
 
+                        <br>
+
+                        +255 791 338 080
+
                     </a>
 
                 </li>
 
-                <li>
 
-                    Airtel Money
-
-                </li>
+                <!-- WHATSAPP NUMBER 2 -->
 
                 <li>
 
-                    M-Pesa
+                    <a
+                        href="https://wa.me/255791338080"
+                        target="_blank"
+                        class="contact-button contact-whatsapp"
+                    >
+
+                        💬 WhatsApp
+
+                        <br>
+
+                        +255 791 338 080
+
+                    </a>
 
                 </li>
+
 
             </ul>
 
+
         </div>
 
+
+        <!-- PAYMENT -->
 
         <div>
 
@@ -1450,19 +1569,23 @@
                 Payment
             </h3>
 
-            <p>
 
-                M-Pesa
+            <div class="payment-methods">
 
-                <br><br>
+                <div class="payment-item">
+                    📱 M-Pesa
+                </div>
 
-                Airtel Money
+                <div class="payment-item">
+                    📱 Airtel Money
+                </div>
 
-                <br><br>
+                <div class="payment-item">
+                    🔐 Secure Payment Verification
+                </div>
 
-                Secure Payment Verification
+            </div>
 
-            </p>
 
         </div>
 
@@ -1489,7 +1612,7 @@
     href="https://wa.me/255689435698"
     target="_blank"
     class="whatsapp-float"
-    title="Chat With Us on WhatsApp"
+    title="WhatsApp +255 689 435 698"
 >
 
     💬

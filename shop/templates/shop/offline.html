@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Offline | Idrissah Online Shop</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            text-align: center;
+        }
+
+        .offline-box {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 10px;
+            background: #0d6efd;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #084298;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="offline-box">
+
+        <h1>📡 You Are Offline</h1>
+
+        <p>
+            It looks like your internet connection is unavailable.
+        </p>
+
+        <p>
+            Please reconnect to the internet and try again.
+        </p>
+
+        <button onclick="location.reload()">
+            🔄 Try Again
+        </button>
+
+    </div>
+
+</body>
+</html>

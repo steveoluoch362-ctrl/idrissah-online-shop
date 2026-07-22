@@ -12,396 +12,332 @@
         Complete Your Order | Idrissah Online Shop
     </title>
 
-
     <style>
 
         * {
             box-sizing: border-box;
         }
 
-
         body {
-
             margin: 0;
-
             font-family: Arial, sans-serif;
-
             background: #f4f6f8;
-
             color: #222;
-
         }
-
 
         .header {
-
             background: #111;
-
             color: white;
-
-            padding: 20px;
-
+            padding: 18px;
             text-align: center;
-
         }
-
 
         .header h1 {
-
             margin: 0;
-
-            font-size: 26px;
-
+            font-size: 25px;
         }
 
+        .header p {
+            margin: 6px 0 0;
+            color: #ddd;
+        }
 
         .container {
-
-            max-width: 1000px;
-
+            max-width: 1100px;
             margin: 30px auto;
-
             padding: 20px;
-
         }
-
 
         .back {
-
             display: inline-block;
-
             margin-bottom: 20px;
-
             text-decoration: none;
-
             color: #111;
-
             font-weight: bold;
-
         }
-
 
         .order-grid {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 25px;
-
         }
-
 
         .card {
-
             background: white;
-
             padding: 25px;
-
             border-radius: 15px;
-
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-
         }
-
 
         .card h2 {
-
             margin-top: 0;
-
-            font-size: 24px;
-
+            font-size: 23px;
         }
-
 
         .product-name {
-
             font-size: 25px;
-
             font-weight: bold;
-
             margin-bottom: 10px;
-
         }
-
 
         .price {
-
             font-size: 26px;
-
             font-weight: bold;
-
-            color: green;
-
+            color: #008000;
             margin: 15px 0;
-
         }
-
 
         .payment-total {
-
             background: #f1f8f3;
-
             border: 2px solid #25a244;
-
             border-radius: 10px;
-
             padding: 15px;
-
             margin: 20px 0;
-
             text-align: center;
-
         }
-
 
         .payment-total span {
-
             display: block;
-
             font-size: 14px;
-
             color: #555;
-
         }
-
 
         .payment-total strong {
-
             font-size: 30px;
-
             color: #008000;
-
         }
-
 
         .payment-box {
-
             border: 1px solid #ddd;
-
             border-radius: 12px;
-
             padding: 18px;
-
             margin-bottom: 15px;
-
         }
-
 
         .payment-box h3 {
-
             margin-top: 0;
-
-            margin-bottom: 10px;
-
         }
-
 
         .mpesa {
-
             border-left: 6px solid #e60000;
-
         }
-
 
         .airtel {
-
-            border-left: 6px solid #e60000;
-
+            border-left: 6px solid #d90000;
         }
-
 
         .payment-number {
-
             font-size: 22px;
-
             font-weight: bold;
-
             margin: 10px 0;
-
         }
-
 
         .payment-name {
-
             color: #555;
-
             margin-bottom: 12px;
-
         }
-
 
         .copy-btn {
-
             border: none;
-
             background: #111;
-
             color: white;
-
             padding: 10px 15px;
-
             border-radius: 7px;
-
             cursor: pointer;
-
             font-weight: bold;
-
         }
-
 
         .copy-btn:hover {
-
             background: #333;
-
         }
-
 
         .app-btn {
-
             display: inline-block;
-
             margin-top: 10px;
-
             padding: 11px 15px;
-
             background: #25D366;
-
             color: white;
-
             text-decoration: none;
-
             border-radius: 7px;
-
             font-weight: bold;
-
         }
-
 
         .instructions {
-
             background: #fff8e1;
-
             border-left: 5px solid #ffb300;
-
             padding: 15px;
-
             border-radius: 8px;
-
             margin: 20px 0;
-
             line-height: 1.6;
-
         }
 
+        .location-box {
+            background: #f5f7ff;
+            border: 1px solid #d9def7;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .location-box strong {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background: #4285F4;
+            color: white;
+            text-decoration: none;
+            padding: 11px 15px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
 
         label {
-
             display: block;
-
             font-weight: bold;
-
             margin-top: 15px;
-
             margin-bottom: 7px;
-
         }
-
 
         input,
-        select {
-
+        select,
+        textarea {
             width: 100%;
-
             padding: 13px;
-
             border: 1px solid #ccc;
-
             border-radius: 7px;
-
             font-size: 16px;
-
         }
 
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .field {
+            margin-bottom: 12px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        .payment-select {
+            background: #fafafa;
+        }
+
+        .transaction-box {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .confirmation {
+            margin-top: 20px;
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ffcc66;
+        }
+
+        .confirmation label {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .confirmation input {
+            width: auto;
+            margin-top: 4px;
+        }
 
         .submit-btn {
-
             width: 100%;
-
             margin-top: 25px;
-
             padding: 16px;
-
             border: none;
-
             border-radius: 8px;
-
             background: #111;
-
             color: white;
-
             font-size: 18px;
-
             font-weight: bold;
-
             cursor: pointer;
-
         }
-
 
         .submit-btn:hover {
-
             background: #333;
-
         }
-
 
         .whatsapp {
-
             display: block;
-
             text-align: center;
-
             margin-top: 15px;
-
             padding: 14px;
-
             background: #25D366;
-
             color: white;
-
             text-decoration: none;
-
             border-radius: 8px;
-
             font-weight: bold;
-
         }
-
 
         .warning {
-
             color: #b00020;
-
             font-size: 14px;
-
             margin-top: 10px;
-
         }
 
+        .support {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .support a {
+            display: inline-block;
+            margin: 5px 5px 0 0;
+            padding: 10px 13px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .success-message {
+            background: #e8f5e9;
+            color: #1b5e20;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #b71c1c;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
 
         @media (max-width: 768px) {
 
             .order-grid {
-
                 grid-template-columns: 1fr;
-
             }
 
             .container {
-
                 padding: 15px;
+            }
 
+            .payment-number {
+                font-size: 19px;
             }
 
         }
@@ -417,40 +353,49 @@
 <div class="header">
 
     <h1>
-
         Idrissah Online Shop
-
     </h1>
 
-</div>
+    <p>
+        Secure & Easy Online Ordering
+    </p>
 
+</div>
 
 
 <div class="container">
 
 
-    <a href="/" class="back">
-
+    <a href="/products/" class="back">
         ← Back to Products
-
     </a>
 
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="success-message">
+
+                {{ message }}
+
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
 
 
     <div class="order-grid">
 
 
-
         <!-- PRODUCT AND PAYMENT -->
-
 
         <div class="card">
 
 
             <h2>
-
                 Your Order
-
             </h2>
 
 
@@ -479,16 +424,13 @@
             {% endif %}
 
 
-
             <div class="payment-total">
 
                 <span>
-
                     Amount to Pay
-
                 </span>
 
-                <strong id="totalAmount">
+                <strong>
 
                     TSh {{ product.price }}
 
@@ -497,34 +439,27 @@
             </div>
 
 
-
             <h2>
-
                 Payment Methods
-
             </h2>
 
 
-
-            <!-- MPESA -->
-
+            <!-- M-PESA -->
 
             <div class="payment-box mpesa">
 
-
                 <h3>
-
                     🔴 Vodacom M-Pesa
-
                 </h3>
-
 
                 <div class="payment-name">
 
-                    Name: MODESTA WELIMA BEDA
+                    Name:
+                    <strong>
+                        MODESTA WELIMA BEDA
+                    </strong>
 
                 </div>
-
 
                 <div class="payment-number"
                      id="mpesaNumber">
@@ -533,55 +468,45 @@
 
                 </div>
 
-
                 <button
                     type="button"
                     class="copy-btn"
-                    onclick="copyNumber('mpesaNumber')"
-                >
+                    onclick="copyNumber('mpesaNumber')">
 
                     📋 Copy M-Pesa Number
 
                 </button>
 
-
                 <br>
-
 
                 <a
                     href="https://wa.me/255689435698"
                     target="_blank"
-                    class="app-btn"
-                >
+                    class="app-btn">
 
-                    📱 Contact M-Pesa Number
+                    💬 Contact M-Pesa
 
                 </a>
-
 
             </div>
 
 
-
-            <!-- AIRTEL -->
-
+            <!-- AIRTEL MONEY -->
 
             <div class="payment-box airtel">
 
-
                 <h3>
-
                     🔴 Airtel Money
-
                 </h3>
-
 
                 <div class="payment-name">
 
-                    Name: REGINA YUSUPH
+                    Name:
+                    <strong>
+                        REGINA YUSUPH
+                    </strong>
 
                 </div>
-
 
                 <div class="payment-number"
                      id="airtelNumber">
@@ -590,98 +515,100 @@
 
                 </div>
 
-
                 <button
                     type="button"
                     class="copy-btn"
-                    onclick="copyNumber('airtelNumber')"
-                >
+                    onclick="copyNumber('airtelNumber')">
 
                     📋 Copy Airtel Number
 
                 </button>
 
-
                 <br>
-
 
                 <a
                     href="https://wa.me/255791338080"
                     target="_blank"
-                    class="app-btn"
-                >
+                    class="app-btn">
 
-                    📱 Contact Airtel Number
+                    💬 Contact Airtel
 
                 </a>
-
 
             </div>
 
 
+            <!-- INSTRUCTIONS -->
 
             <div class="instructions">
 
-
                 <strong>
-
                     How to Pay
-
                 </strong>
-
 
                 <ol>
 
                     <li>
-
-                        Copy the payment number above.
-
+                        Choose M-Pesa or Airtel Money.
                     </li>
 
-
                     <li>
-
-                        Open your M-Pesa or Airtel Money App.
-
+                        Copy the correct payment number.
                     </li>
 
+                    <li>
+                        Open your mobile money app.
+                    </li>
 
                     <li>
-
                         Send the exact amount shown above.
-
                     </li>
 
-
                     <li>
-
-                        Keep your payment Transaction ID.
-
+                        Keep your Transaction ID.
                     </li>
 
-
                     <li>
-
                         Enter the Transaction ID in the order form.
-
                     </li>
 
-
                     <li>
-
-                        Submit your order for verification.
-
+                        Confirm that you have completed payment.
                     </li>
 
                 </ol>
 
-
                 <div class="warning">
 
-                    ⚠️ Your order will remain pending until the payment is verified by the admin.
+                    ⚠️ Your order will be verified after payment confirmation.
 
                 </div>
 
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="location-box">
+
+                <strong>
+                    📍 Idrissah Online Shop Main Branch
+                </strong>
+
+                <div>
+                    Sinza Kamanyola,
+                    Dar es Salaam,
+                    Tanzania
+                </div>
+
+                <a
+                    href="https://maps.app.goo.gl/H8VhjrB1pS2ZHtku8"
+                    target="_blank"
+                    class="map-btn">
+
+                    🗺️ View Our Location on Google Maps
+
+                </a>
 
             </div>
 
@@ -689,36 +616,209 @@
         </div>
 
 
-
-        <!-- ORDER FORM -->
-
+        <!-- CUSTOMER FORM -->
 
         <div class="card">
 
 
             <h2>
-
                 Customer Details
-
             </h2>
+
+
+            <p>
+                Please enter your details to complete your order.
+            </p>
 
 
             <form method="POST">
 
-
                 {% csrf_token %}
 
 
-                {{ form.as_p }}
+                <!-- CUSTOMER NAME -->
+
+                <div class="field">
+
+                    <label for="customer_name">
+
+                        Full Name
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customer_name"
+                        name="customer_name"
+                        placeholder="Enter your full name"
+                        value="{{ request.user.get_full_name }}"
+                        required>
+
+                </div>
 
 
+                <!-- PHONE -->
+
+                <div class="field">
+
+                    <label for="customer_phone">
+
+                        Phone Number
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customer_phone"
+                        name="customer_phone"
+                        placeholder="+255..."
+                        required>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="field">
+
+                    <label for="customer_location">
+
+                        Delivery Location
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <textarea
+                        id="customer_location"
+                        name="customer_location"
+                        placeholder="Enter your delivery address or location"
+                        required></textarea>
+
+                </div>
+
+
+                <!-- GOOGLE MAP LOCATION -->
+
+                <div class="location-box">
+
+                    <strong>
+                        📍 Need help finding your location?
+                    </strong>
+
+                    <p>
+                        Search or select your location using Google Maps,
+                        then enter the location details above.
+                    </p>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1"
+                        target="_blank"
+                        class="map-btn">
+
+                        🔎 Search Location on Google Maps
+
+                    </a>
+
+                </div>
+
+
+                <!-- PAYMENT METHOD -->
+
+                <div class="field">
+
+                    <label for="payment_method">
+
+                        Payment Method
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="payment_method"
+                        name="payment_method"
+                        class="payment-select"
+                        required>
+
+                        <option value="">
+                            -- Select Payment Method --
+                        </option>
+
+                        <option value="Vodacom M-Pesa">
+                            Vodacom M-Pesa
+                        </option>
+
+                        <option value="Airtel Money">
+                            Airtel Money
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TRANSACTION ID -->
+
+                <div class="transaction-box">
+
+                    <label for="transaction_id">
+
+                        Payment Transaction ID
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="transaction_id"
+                        name="transaction_id"
+                        placeholder="Enter your payment transaction ID"
+                        required>
+
+                    <p>
+
+                        Enter the transaction ID you received
+                        after making payment.
+
+                    </p>
+
+                </div>
+
+
+                <!-- PAYMENT CONFIRMATION -->
+
+                <div class="confirmation">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="payment_confirmed"
+                            name="payment_confirmed"
+                            required>
+
+                        <span>
+
+                            I confirm that I have completed payment
+                            of the exact order amount using the selected
+                            payment method. I understand that my order
+                            will be verified before processing.
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- SUBMIT -->
 
                 <button
                     type="submit"
-                    class="submit-btn"
-                >
+                    class="submit-btn">
 
-                    💳 Submit Order for Payment Verification
+                    🛒 Submit Order for Verification
 
                 </button>
 
@@ -726,16 +826,43 @@
             </form>
 
 
+            <!-- WHATSAPP -->
 
             <a
-                href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop%2C%20I%20have%20made%20a%20payment%20for%20{{ product.name }}.%20Please%20verify%20my%20payment."
+                href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop%2C%20I%20have%20made%20a%20payment.%20Please%20help%20me%20verify%20my%20order."
                 target="_blank"
-                class="whatsapp"
-            >
+                class="whatsapp">
 
                 💬 Send Payment Confirmation on WhatsApp
 
             </a>
+
+
+            <!-- SUPPORT -->
+
+            <div class="support">
+
+                <strong>
+                    Need Help?
+                </strong>
+
+                <br>
+
+                <a
+                    href="tel:+255689435698">
+
+                    📞 Call +255 689 435 698
+
+                </a>
+
+                <a
+                    href="tel:+255791338080">
+
+                    📞 Call +255 791 338 080
+
+                </a>
+
+            </div>
 
 
         </div>
@@ -747,12 +874,10 @@
 </div>
 
 
-
 <script>
 
 
 function copyNumber(elementId) {
-
 
     const number = document
         .getElementById(elementId)
@@ -760,26 +885,28 @@ function copyNumber(elementId) {
         .trim();
 
 
-    navigator.clipboard
-        .writeText(number)
-        .then(function() {
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
 
+        navigator.clipboard
+            .writeText(number)
+            .then(function() {
 
-            alert(
-                "Payment number copied: " + number
-            );
+                alert(
+                    "Payment number copied: " + number
+                );
 
+            });
 
-        })
-        .catch(function() {
+    } else {
 
+        alert(
+            "Please copy the number manually: " + number
+        );
 
-            alert(
-                "Please copy the number manually: " + number
-            );
-
-
-        });
+    }
 
 }
 

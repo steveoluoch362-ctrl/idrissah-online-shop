@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>{{ product.name }} | Idrissah Online Shop</title>
+    <title>
+        {{ product.name }} | Idrissah Online Shop
+    </title>
+
 
     <style>
 
@@ -15,220 +21,492 @@
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f5f7fa;
+
             color: #222;
+
         }
 
-        .header {
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
             background: #111;
+
             color: white;
-            padding: 18px 25px;
-            text-align: center;
+
+            padding: 18px 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
         }
 
-        .header h1 {
-            margin: 0;
-            font-size: 25px;
+
+        .logo {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
         }
+
+
+        .header-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+        .welcome {
+
+            font-size: 15px;
+
+        }
+
+
+        .logout {
+
+            color: white;
+
+            background: #e63946;
+
+            padding: 9px 16px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        .logout:hover {
+
+            background: #c1121f;
+
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
 
         .container {
-            max-width: 1100px;
+
+            max-width: 1200px;
+
             margin: 40px auto;
-            padding: 20px;
+
+            padding: 0 20px;
+
         }
 
-        .back {
+
+        .back-link {
+
             display: inline-block;
+
             margin-bottom: 25px;
-            text-decoration: none;
+
             color: #111;
+
+            text-decoration: none;
+
             font-weight: bold;
-            font-size: 16px;
+
         }
+
+
+        .back-link:hover {
+
+            color: #25D366;
+
+        }
+
+
+        /* =========================
+           PRODUCT CARD
+        ========================= */
 
         .product-detail {
+
             background: white;
-            border-radius: 15px;
+
+            border-radius: 18px;
+
             padding: 30px;
+
+            box-shadow:
+                0 8px 30px
+                rgba(0, 0, 0, 0.08);
+
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 45px;
+
+            align-items: center;
+
         }
+
+
+        /* =========================
+           PRODUCT IMAGE
+        ========================= */
 
         .product-image-container {
+
             width: 100%;
-            min-height: 450px;
+
+            height: 500px;
+
+            background: #f4f4f4;
+
+            border-radius: 15px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            background: #fafafa;
-            border-radius: 12px;
+
             overflow: hidden;
+
         }
 
-        .product-image-link {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         .product-image {
+
             width: 100%;
-            height: auto;
-            max-height: 600px;
+
+            height: 100%;
+
             object-fit: contain;
-            display: block;
-            cursor: zoom-in;
-            transition: transform 0.3s ease;
+
+            padding: 20px;
+
         }
 
-        .product-image:hover {
-            transform: scale(1.03);
-        }
 
         .no-image {
-            color: #777;
-            font-size: 18px;
+
             text-align: center;
+
+            color: #777;
+
+            font-size: 70px;
+
         }
 
-        .product-info {
-            padding: 20px 0;
-        }
 
-        .product-info h2 {
-            font-size: 34px;
+        /* =========================
+           PRODUCT INFORMATION
+        ========================= */
+
+        .product-info h1 {
+
+            font-size: 36px;
+
             margin-top: 0;
+
             margin-bottom: 15px;
+
+            line-height: 1.2;
+
         }
+
 
         .price {
-            font-size: 28px;
+
+            font-size: 32px;
+
             font-weight: bold;
-            color: #008000;
+
+            color: #0a8f35;
+
             margin: 20px 0;
+
         }
+
+
+        .availability {
+
+            display: inline-block;
+
+            background: #e8f8ee;
+
+            color: #087f23;
+
+            padding: 8px 14px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .description-title {
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+
+        }
+
 
         .description {
-            font-size: 17px;
-            line-height: 1.7;
+
             color: #555;
+
+            line-height: 1.7;
+
+            font-size: 16px;
+
             margin-bottom: 25px;
+
         }
 
-        .stock {
+
+        /* =========================
+           QUANTITY
+        ========================= */
+
+        .quantity-label {
+
+            display: block;
+
             font-weight: bold;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .quantity-input {
+
+            width: 100px;
+
+            padding: 12px;
+
             font-size: 18px;
-            margin-bottom: 25px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+
         }
 
-        .in-stock {
-            color: green;
-        }
 
-        .out-stock {
-            color: red;
-        }
+        /* =========================
+           BUTTONS
+        ========================= */
 
-        .buttons {
+        .button-group {
+
             display: flex;
-            flex-wrap: wrap;
+
+            flex-direction: column;
+
             gap: 12px;
-            margin-top: 20px;
+
         }
 
-        .order-button {
-            display: inline-block;
+
+        .btn {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        .cart-btn {
+
             background: #111;
+
             color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+
         }
 
-        .order-button:hover {
+
+        .cart-btn:hover {
+
             background: #333;
+
         }
 
-        .whatsapp {
-            display: inline-block;
-            background: #25D366;
+
+        .buy-btn {
+
+            background: #ff9800;
+
             color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+
         }
 
-        .whatsapp:hover {
-            background: #1ebe5d;
+
+        .buy-btn:hover {
+
+            background: #e68900;
+
         }
 
-        .availability-button {
-            display: inline-block;
+
+        .whatsapp-btn {
+
             background: #25D366;
+
             color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
+
         }
 
-        .availability-button:hover {
+
+        .whatsapp-btn:hover {
+
             background: #1ebe5d;
+
         }
 
-        @media (max-width: 768px) {
 
-            .container {
-                margin: 20px auto;
-                padding: 15px;
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 60px;
+
+            background: #111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            line-height: 1.8;
+
+        }
+
+
+        footer strong {
+
+            font-size: 18px;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (
+            max-width: 768px
+        ) {
+
+
+            header {
+
+                text-align: center;
+
+                justify-content: center;
+
             }
+
+
+            .header-right {
+
+                justify-content: center;
+
+                width: 100%;
+
+            }
+
 
             .product-detail {
+
                 grid-template-columns: 1fr;
+
                 padding: 20px;
-                gap: 20px;
+
+                gap: 25px;
+
             }
+
 
             .product-image-container {
-                min-height: 300px;
+
+                height: 350px;
+
             }
 
-            .product-info {
-                padding: 10px 0;
+
+            .product-info h1 {
+
+                font-size: 28px;
+
             }
 
-            .product-info h2 {
-                font-size: 27px;
-            }
 
             .price {
-                font-size: 24px;
+
+                font-size: 26px;
+
             }
 
-            .buttons {
-                flex-direction: column;
-            }
-
-            .order-button,
-            .whatsapp,
-            .availability-button {
-                text-align: center;
-                width: 100%;
-            }
 
         }
 
@@ -240,21 +518,60 @@
 <body>
 
 
-<div class="header">
+<!-- =========================
+     HEADER
+========================= -->
 
-    <h1>
-        Idrissah Online Shop
-    </h1>
+<header>
 
-</div>
 
+    <div class="logo">
+
+        🛍️ Idrissah Online Shop
+
+    </div>
+
+
+    <div class="header-right">
+
+
+        <span class="welcome">
+
+            Welcome,
+            <strong>
+                {{ request.user.username }}
+            </strong>
+
+        </span>
+
+
+        <a
+            href="{% url 'customer_logout' %}"
+            class="logout"
+        >
+
+            Logout
+
+        </a>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
 
     <a
-        href="/"
-        class="back"
+        href="{% url 'products' %}"
+        class="back-link"
     >
 
         ← Back to Products
@@ -262,7 +579,9 @@
     </a>
 
 
+
     <div class="product-detail">
+
 
 
         <!-- PRODUCT IMAGE -->
@@ -273,21 +592,11 @@
             {% if product.image %}
 
 
-                <a
-                    href="{{ product.image.url }}"
-                    target="_blank"
-                    class="product-image-link"
+                <img
+                    src="{{ product.image.url }}"
+                    alt="{{ product.name }}"
+                    class="product-image"
                 >
-
-
-                    <img
-                        src="{{ product.image.url }}"
-                        alt="{{ product.name }}"
-                        class="product-image"
-                    >
-
-
-                </a>
 
 
             {% else %}
@@ -295,7 +604,7 @@
 
                 <div class="no-image">
 
-                    No Product Image Available
+                    🛍️
 
                 </div>
 
@@ -306,16 +615,26 @@
         </div>
 
 
+
         <!-- PRODUCT INFORMATION -->
 
         <div class="product-info">
 
 
-            <h2>
+            <h1>
 
                 {{ product.name }}
 
-            </h2>
+            </h1>
+
+
+
+            <div class="availability">
+
+                ✓ Available
+
+            </div>
+
 
 
             <div class="price">
@@ -325,56 +644,93 @@
             </div>
 
 
-            {% if product.description %}
+
+            <h3 class="description-title">
+
+                Product Description
+
+            </h3>
 
 
-                <div class="description">
+            <div class="description">
+
+
+                {% if product.description %}
 
                     {{ product.description }}
 
-                </div>
+                {% else %}
+
+                    No description available
+                    for this product.
+
+                {% endif %}
 
 
-            {% endif %}
+            </div>
 
 
-            <!-- CHECK PRODUCT AVAILABILITY -->
 
-            {% if product.available %}
+            <!-- ADD TO CART -->
 
+            <form
+                method="POST"
+                action="{% url 'add_to_cart' product.id %}"
+            >
 
-                <div class="stock in-stock">
-
-                    ✓ In Stock
-
-                </div>
-
-
-                <div class="buttons">
+                {% csrf_token %}
 
 
-                    <!-- ORDER BUTTON -->
+                <label
+                    for="quantity"
+                    class="quantity-label"
+                >
 
-                    <a
-                        href="{% url 'order_product' product.id %}"
-                        class="order-button"
+                    Quantity
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    value="1"
+                    min="1"
+                    class="quantity-input"
+                >
+
+
+                <div class="button-group">
+
+
+                    <button
+                        type="submit"
+                        class="btn cart-btn"
                     >
 
-                        🛒 Order Now
+                        🛒 Add to Cart
+
+                    </button>
+
+
+                    <a
+                        href="{% url 'order' product.id %}"
+                        class="btn buy-btn"
+                    >
+
+                        💳 Buy Now
 
                     </a>
 
 
-                    <!-- WHATSAPP BUTTON -->
-
                     <a
-                        href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop%2C%20I%20am%20interested%20in%20{{ product.name }}"
-                        class="whatsapp"
+                        href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop%2C%20I%20am%20interested%20in%20{{ product.name|urlencode }}.%20Please%20send%20me%20more%20information."
                         target="_blank"
-                        rel="noopener"
+                        class="btn whatsapp-btn"
                     >
 
-                        📱 Order via WhatsApp
+                        💬 Order via WhatsApp
 
                     </a>
 
@@ -382,37 +738,7 @@
                 </div>
 
 
-            {% else %}
-
-
-                <div class="stock out-stock">
-
-                    ❌ Out of Stock
-
-                </div>
-
-
-                <div class="buttons">
-
-
-                    <!-- ASK AVAILABILITY ON WHATSAPP -->
-
-                    <a
-                        href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop%2C%20I%20am%20interested%20in%20{{ product.name }}%20and%20would%20like%20to%20know%20when%20it%20will%20be%20available."
-                        class="availability-button"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        📱 Ask About Availability
-
-                    </a>
-
-
-                </div>
-
-
-            {% endif %}
+            </form>
 
 
         </div>
@@ -422,6 +748,55 @@
 
 
 </div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+    <strong>
+
+        IDRISSAH ONLINE SHOP
+
+    </strong>
+
+
+    <br>
+
+
+    Your trusted online marketplace.
+
+
+    <br>
+
+
+    Quality Products • Affordable Prices
+
+
+    <br>
+
+
+    Sinza Kamanyola • Opposite MACK Quality
+
+
+    <br>
+
+
+    Dar es Salaam, Tanzania
+
+
+    <br><br>
+
+
+    © 2026 Idrissah Online Shop.
+    All Rights Reserved.
+
+
+</footer>
 
 
 </body>

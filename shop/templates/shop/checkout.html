@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Checkout | Idrissah Online Shop
+    </title>
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfQ3zjQj3f0n6m0r5m2qQ5x6x6x6x6x6="
+        crossorigin=""
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #f4f7fb;
+
+            color:
+                #1f2937;
+
+        }
+
+        header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1d4ed8
+                );
+
+            color:
+                white;
+
+            padding:
+                18px 20px;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                15px;
+
+        }
+
+        .brand {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            font-size:
+                22px;
+
+            font-weight:
+                bold;
+
+        }
+
+        .welcome {
+
+            font-size:
+                15px;
+
+        }
+
+        .logout {
+
+            color:
+                white;
+
+            text-decoration:
+                none;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+            padding:
+                9px 15px;
+
+            border-radius:
+                8px;
+
+        }
+
+        .container {
+
+            width:
+                95%;
+
+            max-width:
+                1100px;
+
+            margin:
+                30px auto;
+
+        }
+
+        .page-title {
+
+            text-align:
+                center;
+
+            margin-bottom:
+                25px;
+
+        }
+
+        .page-title h1 {
+
+            margin:
+                0 0 8px;
+
+            color:
+                #0f172a;
+
+        }
+
+        .page-title p {
+
+            margin:
+                0;
+
+            color:
+                #64748b;
+
+        }
+
+        .checkout-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1.4fr;
+
+            gap:
+                25px;
+
+        }
+
+        .card {
+
+            background:
+                white;
+
+            border-radius:
+                15px;
+
+            padding:
+                25px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.08
+                );
+
+        }
+
+        .card h2 {
+
+            margin-top:
+                0;
+
+            color:
+                #0f172a;
+
+            font-size:
+                21px;
+
+        }
+
+        .product-item {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            padding:
+                15px 0;
+
+            border-bottom:
+                1px solid
+                #e5e7eb;
+
+        }
+
+        .product-name {
+
+            font-weight:
+                bold;
+
+        }
+
+        .product-quantity {
+
+            color:
+                #64748b;
+
+            margin-top:
+                5px;
+
+        }
+
+        .product-price {
+
+            font-weight:
+                bold;
+
+            color:
+                #1d4ed8;
+
+        }
+
+        .total {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            font-size:
+                20px;
+
+            font-weight:
+                bold;
+
+            margin-top:
+                20px;
+
+            padding-top:
+                15px;
+
+            border-top:
+                2px solid
+                #e5e7eb;
+
+        }
+
+        .continue-shopping {
+
+            display:
+                inline-block;
+
+            margin-top:
+                20px;
+
+            color:
+                #1d4ed8;
+
+            text-decoration:
+                none;
+
+            font-weight:
+                bold;
+
+        }
+
+        label {
+
+            display:
+                block;
+
+            margin-top:
+                18px;
+
+            margin-bottom:
+                7px;
+
+            font-weight:
+                bold;
+
+        }
+
+        input,
+        select {
+
+            width:
+                100%;
+
+            padding:
+                13px;
+
+            border:
+                1px solid
+                #cbd5e1;
+
+            border-radius:
+                8px;
+
+            font-size:
+                15px;
+
+            outline:
+                none;
+
+        }
+
+        input:focus,
+        select:focus {
+
+            border-color:
+                #2563eb;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(
+                    37,
+                    99,
+                    235,
+                    0.1
+                );
+
+        }
+
+        .location-section {
+
+            margin-top:
+                20px;
+
+            padding:
+                18px;
+
+            background:
+                #f8fafc;
+
+            border-radius:
+                12px;
+
+            border:
+                1px solid
+                #e2e8f0;
+
+        }
+
+        .location-title {
+
+            font-size:
+                18px;
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                12px;
+
+        }
+
+        .location-buttons {
+
+            display:
+                flex;
+
+            gap:
+                10px;
+
+            flex-wrap:
+                wrap;
+
+            margin:
+                12px 0;
+
+        }
+
+        button {
+
+            cursor:
+                pointer;
+
+        }
+
+        .location-btn {
+
+            border:
+                none;
+
+            padding:
+                11px 15px;
+
+            border-radius:
+                8px;
+
+            background:
+                #2563eb;
+
+            color:
+                white;
+
+            font-weight:
+                bold;
+
+        }
+
+        .satellite-btn {
+
+            background:
+                #475569;
+
+        }
+
+        .location-status {
+
+            font-size:
+                14px;
+
+            color:
+                #475569;
+
+            margin:
+                10px 0;
+
+        }
+
+        #map {
+
+            width:
+                100%;
+
+            height:
+                350px;
+
+            border-radius:
+                12px;
+
+            margin-top:
+                15px;
+
+            overflow:
+                hidden;
+
+        }
+
+        .coordinates {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                10px;
+
+            margin-top:
+                12px;
+
+        }
+
+        .coordinates input {
+
+            background:
+                #f1f5f9;
+
+        }
+
+        .submit-btn {
+
+            width:
+                100%;
+
+            margin-top:
+                25px;
+
+            padding:
+                15px;
+
+            border:
+                none;
+
+            border-radius:
+                10px;
+
+            background:
+                #16a34a;
+
+            color:
+                white;
+
+            font-size:
+                17px;
+
+            font-weight:
+                bold;
+
+            cursor:
+                pointer;
+
+        }
+
+        .submit-btn:hover {
+
+            background:
+                #15803d;
+
+        }
+
+        .info-box {
+
+            margin-top:
+                15px;
+
+            padding:
+                12px;
+
+            background:
+                #eff6ff;
+
+            border-left:
+                4px solid
+                #2563eb;
+
+            color:
+                #1e3a8a;
+
+            font-size:
+                14px;
+
+            border-radius:
+                5px;
+
+        }
+
+        footer {
+
+            text-align:
+                center;
+
+            background:
+                #0f172a;
+
+            color:
+                white;
+
+            padding:
+                25px 15px;
+
+            margin-top:
+                40px;
+
+        }
+
+        footer p {
+
+            margin:
+                6px 0;
+
+        }
+
+        @media (
+            max-width:
+            800px
+        ) {
+
+            .checkout-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            header {
+
+                flex-direction:
+                    column;
+
+                text-align:
+                    center;
+
+            }
+
+            .coordinates {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="brand">
+
+        🛍️ Idrissah Online Shop
+
+    </div>
+
+
+    <div class="welcome">
+
+        Welcome,
+        {{ customer.username }}
+
+    </div>
+
+
+    <a
+        href="{% url 'customer_logout' %}"
+        class="logout"
+    >
+
+        Logout
+
+    </a>
+
+</header>
+
+
+
+<div class="container">
+
+
+    <div class="page-title">
+
+        <h1>
+            Checkout
+        </h1>
+
+        <p>
+            Complete your order details below.
+        </p>
+
+    </div>
+
+
+
+    <div class="checkout-grid">
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="card">
+
+            <h2>
+                🛒 Your Order
+            </h2>
+
+
+            {% for item in cart_items %}
+
+                <div class="product-item">
+
+                    <div>
+
+                        <div class="product-name">
+
+                            {{ item.product.name }}
+
+                        </div>
+
+                        <div class="product-quantity">
+
+                            Quantity:
+                            {{ item.quantity }}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-price">
+
+                        TSh
+                        {{ item.item_total }}
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+            <div class="total">
+
+                <span>
+                    Total
+                </span>
+
+                <span>
+                    TSh
+                    {{ total_amount }}
+                </span>
+
+            </div>
+
+
+            <a
+                href="{% url 'products' %}"
+                class="continue-shopping"
+            >
+
+                ← Continue Shopping
+
+            </a>
+
+        </div>
+
+
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="card">
+
+            <h2>
+                📦 Delivery & Payment Details
+            </h2>
+
+
+            <form
+                method="POST"
+            >
+
+                {% csrf_token %}
+
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    name="customer_phone"
+                    placeholder="e.g. 0712345678"
+                    required
+                >
+
+
+
+                <!-- LOCATION -->
+
+                <div class="location-section">
+
+
+                    <div class="location-title">
+
+                        📍 Delivery Location
+
+                    </div>
+
+
+                    <input
+                        type="text"
+                        id="location_search"
+                        placeholder="Search your location, e.g. Sinza Kamanyola"
+                    >
+
+
+                    <div class="location-buttons">
+
+
+                        <button
+                            type="button"
+                            class="location-btn"
+                            onclick="getCurrentLocation()"
+                        >
+
+                            📍 Use My Current Location
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="location-btn satellite-btn"
+                            onclick="toggleSatellite()"
+                        >
+
+                            🛰️ Satellite View
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div
+                        id="location_status"
+                        class="location-status"
+                    >
+
+                        Search for your location or use your current GPS location.
+
+                    </div>
+
+
+                    <div id="map"></div>
+
+
+                    <label>
+                        Selected Delivery Address
+                    </label>
+
+                    <input
+                        type="text"
+                        name="customer_location"
+                        id="customer_location"
+                        placeholder="Your selected delivery location"
+                        required
+                    >
+
+
+                    <div class="coordinates">
+
+
+                        <div>
+
+                            <label>
+                                Latitude
+                            </label>
+
+                            <input
+                                type="text"
+                                name="latitude"
+                                id="latitude"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Longitude
+                            </label>
+
+                            <input
+                                type="text"
+                                name="longitude"
+                                id="longitude"
+                                readonly
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        💡 You can search for your location,
+                        use your phone's GPS,
+                        or drag the map marker
+                        to your exact delivery location.
+
+                    </div>
+
+
+                </div>
+
+
+
+                <label>
+                    Payment Method
+                </label>
+
+                <select
+                    name="payment_method"
+                    required
+                >
+
+                    <option value="">
+                        Select payment method
+                    </option>
+
+                    <option value="M-Pesa">
+                        M-Pesa
+                    </option>
+
+                    <option value="Tigo Pesa">
+                        Tigo Pesa
+                    </option>
+
+                    <option value="Airtel Money">
+                        Airtel Money
+                    </option>
+
+                    <option value="Halopesa">
+                        Halopesa
+                    </option>
+
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="Bank Transfer">
+                        Bank Transfer
+                    </option>
+
+                </select>
+
+
+
+                <label>
+                    Transaction ID (Optional)
+                </label>
+
+                <input
+                    type="text"
+                    name="transaction_id"
+                    placeholder="Enter transaction ID if already paid"
+                >
+
+
+                <div class="info-box">
+
+                    💡 After submitting your order,
+                    you will be redirected to WhatsApp
+                    to confirm your order and payment.
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+
+                    💬 Place Order via WhatsApp
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    <p>
+        <strong>
+            🛍️ Idrissah Online Shop
+        </strong>
+    </p>
+
+    <p>
+        Quality Products • Affordable Prices
+    </p>
+
+    <p>
+        Sinza Kamanyola • Opposite MACK Quality •
+        Dar es Salaam, Tanzania
+    </p>
+
+    <p>
+        📞 +255 689 435 698
+        &nbsp; | &nbsp;
+        📞 +255 791 338 080
+    </p>
+
+    <p>
+        © 2026 Idrissah Online Shop.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- Leaflet JavaScript -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+></script>
+
+
+
+<script>
+
+
+// ============================================================
+// DEFAULT MAP LOCATION
+// DAR ES SALAAM
+// ============================================================
+
+let map = L.map(
+    "map"
+).setView(
+    [
+        -6.7924,
+        39.2083
+    ],
+    12
+);
+
+
+// ============================================================
+// NORMAL MAP
+// ============================================================
+
+let normalLayer = L.tileLayer(
+
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+
+    {
+
+        maxZoom:
+            19,
+
+        attribution:
+            '&copy; OpenStreetMap contributors'
+
+    }
+
+).addTo(
+    map
+);
+
+
+// ============================================================
+// SATELLITE MAP
+// ============================================================
+
+let satelliteLayer = L.tileLayer(
+
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+
+    {
+
+        maxZoom:
+            19,
+
+        attribution:
+            "Tiles &copy; Esri"
+
+    }
+
+);
+
+
+let satelliteMode =
+    false;
+
+
+// ============================================================
+// MARKER
+// ============================================================
+
+let marker = L.marker(
+
+    [
+        -6.7924,
+        39.2083
+    ],
+
+    {
+
+        draggable:
+            true
+
+    }
+
+).addTo(
+    map
+);
+
+
+// ============================================================
+// UPDATE LOCATION
+// ============================================================
+
+function updateLocation(
+
+    latitude,
+
+    longitude,
+
+    address = ""
+
+) {
+
+
+    marker.setLatLng(
+
+        [
+            latitude,
+            longitude
+        ]
+
+    );
+
+
+    map.setView(
+
+        [
+            latitude,
+            longitude
+        ],
+
+        16
+
+    );
+
+
+    document.getElementById(
+        "latitude"
+    ).value =
+        latitude;
+
+
+    document.getElementById(
+        "longitude"
+    ).value =
+        longitude;
+
+
+    if (
+        address
+    ) {
+
+        document.getElementById(
+            "customer_location"
+        ).value =
+            address;
+
+    }
+
+
+    document.getElementById(
+        "location_status"
+    ).innerText =
+
+        "Location selected successfully.";
+
+}
+
+
+// ============================================================
+// DRAG MARKER
+// ============================================================
+
+marker.on(
+
+    "dragend",
+
+    function () {
+
+
+        let position =
+            marker.getLatLng();
+
+
+        updateLocation(
+
+            position.lat,
+
+            position.lng
+
+        );
+
+
+        reverseGeocode(
+
+            position.lat,
+
+            position.lng
+
+        );
+
+    }
+
+);
+
+
+// ============================================================
+// CURRENT GPS LOCATION
+// ============================================================
+
+function getCurrentLocation() {
+
+
+    let status =
+        document.getElementById(
+            "location_status"
+        );
+
+
+    if (
+        !navigator.geolocation
+    ) {
+
+        status.innerText =
+            "Your browser does not support GPS location.";
+
+        return;
+
+    }
+
+
+    status.innerText =
+        "Getting your current location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function (
+            position
+        ) {
+
+
+            let latitude =
+                position.coords.latitude;
+
+
+            let longitude =
+                position.coords.longitude;
+
+
+            updateLocation(
+
+                latitude,
+
+                longitude
+
+            );
+
+
+            reverseGeocode(
+
+                latitude,
+
+                longitude
+
+            );
+
+        },
+
+
+        function (
+            error
+        ) {
+
+
+            status.innerText =
+
+                "Unable to get your location. Please allow location permission.";
+
+        },
+
+
+        {
+
+            enableHighAccuracy:
+                true,
+
+            timeout:
+                15000,
+
+            maximumAge:
+                0
+
+        }
+
+    );
+
+}
+
+
+// ============================================================
+// REVERSE GEOCODING
+// GET ADDRESS FROM GPS
+// ============================================================
+
+function reverseGeocode(
+
+    latitude,
+
+    longitude
+
+) {
+
+
+    fetch(
+
+        "https://nominatim.openstreetmap.org/reverse?format=json&lat="
+
+        + latitude
+
+        + "&lon="
+
+        + longitude
+
+        + "&zoom=18&addressdetails=1",
+
+        {
+
+            headers: {
+
+                "Accept":
+                    "application/json"
+
+            }
+
+        }
+
+    )
+
+    .then(
+
+        response =>
+            response.json()
+
+    )
+
+    .then(
+
+        data => {
+
+
+            if (
+                data.display_name
+            ) {
+
+
+                document.getElementById(
+                    "customer_location"
+                ).value =
+
+                    data.display_name;
+
+
+            }
+
+        }
+
+    )
+
+    .catch(
+
+        error => {
+
+
+            console.log(
+                "Reverse geocoding error:",
+                error
+            );
+
+        }
+
+    );
+
+}
+
+
+// ============================================================
+// SEARCH LOCATION
+// ============================================================
+
+let searchInput =
+    document.getElementById(
+        "location_search"
+    );
+
+
+searchInput.addEventListener(
+
+    "change",
+
+    function () {
+
+
+        let query =
+            searchInput.value.trim();
+
+
+        if (
+            !query
+        ) {
+
+            return;
+
+        }
+
+
+        document.getElementById(
+            "location_status"
+        ).innerText =
+            "Searching location...";
+
+
+        fetch(
+
+            "https://nominatim.openstreetmap.org/search?format=json&q="
+
+            + encodeURIComponent(
+                query
+            )
+
+            + "&limit=1",
+
+            {
+
+                headers: {
+
+                    "Accept":
+                        "application/json"
+
+                }
+
+            }
+
+        )
+
+        .then(
+
+            response =>
+                response.json()
+
+        )
+
+        .then(
+
+            data => {
+
+
+                if (
+                    data.length === 0
+                ) {
+
+
+                    document.getElementById(
+                        "location_status"
+                    ).innerText =
+
+                        "Location not found. Try another search.";
+
+
+                    return;
+
+                }
+
+
+                let result =
+                    data[0];
+
+
+                let latitude =
+                    parseFloat(
+                        result.lat
+                    );
+
+
+                let longitude =
+                    parseFloat(
+                        result.lon
+                    );
+
+
+                updateLocation(
+
+                    latitude,
+
+                    longitude,
+
+                    result.display_name
+
+                );
+
+            }
+
+        )
+
+        .catch(
+
+            error => {
+
+
+                console.log(
+                    error
+                );
+
+
+                document.getElementById(
+                    "location_status"
+                ).innerText =
+
+                    "Location search failed. Please try again.";
+
+            }
+
+        );
+
+    }
+
+);
+
+
+// ============================================================
+// SATELLITE TOGGLE
+// ============================================================
+
+function toggleSatellite() {
+
+
+    if (
+        satelliteMode === false
+    ) {
+
+
+        map.removeLayer(
+            normalLayer
+        );
+
+
+        satelliteLayer.addTo(
+            map
+        );
+
+
+        satelliteMode =
+            true;
+
+
+    } else {
+
+
+        map.removeLayer(
+            satelliteLayer
+        );
+
+
+        normalLayer.addTo(
+            map
+        );
+
+
+        satelliteMode =
+            false;
+
+    }
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

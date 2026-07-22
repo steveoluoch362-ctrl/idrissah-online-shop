@@ -1,0 +1,899 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    IDRISSAH ONLINE SHOP
+</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        background: #f5f7fa;
+
+        color: #1f2937;
+
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+
+        background: #111827;
+
+        color: white;
+
+        padding: 12px 7%;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 25px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    /* BRAND */
+
+    .brand {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+    }
+
+
+    /* LOGO */
+
+    .brand img {
+
+        width: 95px;
+
+        height: 95px;
+
+        object-fit: contain;
+
+        background: white;
+
+        border-radius: 14px;
+
+        padding: 5px;
+
+        box-shadow:
+            0 4px 15px
+            rgba(0, 0, 0, 0.3);
+
+    }
+
+
+    /* BRAND TEXT */
+
+    .brand-text {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+
+    .brand-text h1 {
+
+        font-size: 25px;
+
+        letter-spacing: 0.5px;
+
+    }
+
+
+    .brand-text span {
+
+        font-size: 12px;
+
+        color: #d1d5db;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 20px;
+
+    }
+
+
+    nav a {
+
+        color: white;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        padding: 10px 15px;
+
+        border-radius: 7px;
+
+        transition: 0.3s;
+
+    }
+
+
+    nav a:hover {
+
+        background: #2563eb;
+
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+
+        background:
+
+            linear-gradient(
+
+                135deg,
+
+                #1d4ed8,
+
+                #2563eb,
+
+                #1e40af
+
+            );
+
+        color: white;
+
+        padding: 90px 8%;
+
+        text-align: center;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 48px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 19px;
+
+        max-width: 700px;
+
+        margin: 0 auto 30px;
+
+        line-height: 1.6;
+
+        color: #e0e7ff;
+
+    }
+
+
+    .hero a {
+
+        display: inline-block;
+
+        background: white;
+
+        color: #1d4ed8;
+
+        padding: 15px 30px;
+
+        border-radius: 10px;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        font-size: 16px;
+
+        transition: 0.3s;
+
+    }
+
+
+    .hero a:hover {
+
+        transform: translateY(-3px);
+
+        box-shadow:
+
+            0 8px 20px
+
+            rgba(0, 0, 0, 0.2);
+
+    }
+
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+
+        padding: 60px 7%;
+
+        max-width: 1400px;
+
+        margin: auto;
+
+    }
+
+
+    .products h2 {
+
+        text-align: center;
+
+        margin-bottom: 40px;
+
+        font-size: 32px;
+
+        color: #111827;
+
+    }
+
+
+    .product-grid {
+
+        display: grid;
+
+        grid-template-columns:
+
+            repeat(
+
+                auto-fit,
+
+                minmax(
+
+                    250px,
+
+                    1fr
+
+                )
+
+            );
+
+        gap: 28px;
+
+    }
+
+
+    /* PRODUCT CARD */
+
+    .product-card {
+
+        background: white;
+
+        padding: 20px;
+
+        border-radius: 16px;
+
+        box-shadow:
+
+            0 5px 20px
+
+            rgba(0, 0, 0, 0.08);
+
+        transition:
+
+            transform 0.3s ease,
+
+            box-shadow 0.3s ease;
+
+    }
+
+
+    .product-card:hover {
+
+        transform:
+
+            translateY(-7px);
+
+        box-shadow:
+
+            0 12px 30px
+
+            rgba(0, 0, 0, 0.12);
+
+    }
+
+
+    /* PRODUCT IMAGE */
+
+    .product-image {
+
+        width: 100%;
+
+        height: 250px;
+
+        object-fit: cover;
+
+        border-radius: 12px;
+
+        background: #f3f4f6;
+
+    }
+
+
+    /* NO IMAGE */
+
+    .no-image {
+
+        width: 100%;
+
+        height: 250px;
+
+        background: #eeeeee;
+
+        border-radius: 12px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        color: #777;
+
+        font-size: 17px;
+
+    }
+
+
+    /* PRODUCT NAME */
+
+    .product-card h3 {
+
+        margin-top: 18px;
+
+        font-size: 21px;
+
+        color: #111827;
+
+    }
+
+
+    /* DESCRIPTION */
+
+    .description {
+
+        margin-top: 10px;
+
+        color: #6b7280;
+
+        line-height: 1.5;
+
+        min-height: 45px;
+
+    }
+
+
+    /* PRICE */
+
+    .price {
+
+        color: #2563eb;
+
+        font-size: 21px;
+
+        font-weight: bold;
+
+        margin: 18px 0;
+
+    }
+
+
+    /* ORDER BUTTON */
+
+    .order-btn {
+
+        display: block;
+
+        background: #2563eb;
+
+        color: white;
+
+        padding: 13px 18px;
+
+        border-radius: 8px;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        text-align: center;
+
+        transition: 0.3s;
+
+    }
+
+
+    .order-btn:hover {
+
+        background: #1d4ed8;
+
+        transform: translateY(-2px);
+
+    }
+
+
+    /* EMPTY PRODUCTS */
+
+    .empty-products {
+
+        text-align: center;
+
+        background: white;
+
+        padding: 50px;
+
+        border-radius: 15px;
+
+        color: #6b7280;
+
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+        background: #111827;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 30px;
+
+        margin-top: 50px;
+
+    }
+
+
+    footer p {
+
+        margin: 5px 0;
+
+        color: #d1d5db;
+
+    }
+
+
+    .footer-brand {
+
+        font-size: 18px;
+
+        font-weight: bold;
+
+        color: white;
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+
+        header {
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 15px 5%;
+
+        }
+
+
+        .brand {
+
+            flex-direction: column;
+
+            gap: 10px;
+
+        }
+
+
+        .brand img {
+
+            width: 110px;
+
+            height: 110px;
+
+        }
+
+
+        .brand-text h1 {
+
+            font-size: 21px;
+
+        }
+
+
+        .brand-text span {
+
+            font-size: 11px;
+
+        }
+
+
+        nav {
+
+            width: 100%;
+
+            justify-content: center;
+
+        }
+
+
+        .hero {
+
+            padding: 65px 5%;
+
+        }
+
+
+        .hero h2 {
+
+            font-size: 34px;
+
+        }
+
+
+        .hero p {
+
+            font-size: 16px;
+
+        }
+
+
+        .products {
+
+            padding: 45px 5%;
+
+        }
+
+
+        .products h2 {
+
+            font-size: 27px;
+
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+```
+<div class="brand">
+
+
+    <img
+
+        src="{% static 'shop/images/logo.png' %}"
+
+        alt="IDRISSAH TECHNOLOGIES Logo"
+
+    >
+
+
+    <div class="brand-text">
+
+
+        <h1>
+
+            IDRISSAH ONLINE SHOP
+
+        </h1>
+
+
+        <span>
+
+            Powered by IDRISSAH TECHNOLOGIES
+
+        </span>
+
+
+    </div>
+
+
+</div>
+
+
+<nav>
+
+
+    <a href="/">
+
+        Home
+
+    </a>
+
+
+    <a href="/admin/">
+
+        Admin
+
+    </a>
+
+
+</nav>
+```
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+```
+<h2>
+
+    Shop Smart. Shop Easy.
+
+</h2>
+
+
+<p>
+
+    Discover quality phones,
+
+    laptops and electronics
+
+    at affordable prices.
+
+    Order online and enjoy
+
+    a simple and secure
+
+    shopping experience.
+
+</p>
+
+
+<a href="#products">
+
+    🛒 View Products
+
+</a>
+```
+
+</section>
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+
+```
+class="products"
+
+id="products"
+```
+
+>
+
+```
+<h2>
+
+    Our Products
+
+</h2>
+
+
+<div class="product-grid">
+
+
+    {% for product in products %}
+
+
+    <div class="product-card">
+
+
+        {% if product.image %}
+
+
+            <img
+
+                src="{{ product.image.url }}"
+
+                alt="{{ product.name }}"
+
+                class="product-image"
+
+            >
+
+
+        {% else %}
+
+
+            <div class="no-image">
+
+                No Image Available
+
+            </div>
+
+
+        {% endif %}
+
+
+        <h3>
+
+            {{ product.name }}
+
+        </h3>
+
+
+        <p class="description">
+
+            {{ product.description }}
+
+        </p>
+
+
+        <div class="price">
+
+            TZS {{ product.price }}
+
+        </div>
+
+
+        <a
+
+            href="{% url 'order_product' product.id %}"
+
+            class="order-btn"
+
+        >
+
+            🛒 Order Now
+
+        </a>
+
+
+    </div>
+
+
+    {% empty %}
+
+
+    <div class="empty-products">
+
+
+        <h3>
+
+            No Products Available
+
+        </h3>
+
+
+        <p>
+
+            Please check again later.
+
+        </p>
+
+
+    </div>
+
+
+    {% endfor %}
+
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+```
+<p class="footer-brand">
+
+    IDRISSAH ONLINE SHOP
+
+</p>
+
+
+<p>
+
+    Powered by IDRISSAH TECHNOLOGIES
+
+</p>
+
+
+<p>
+
+    © 2026 IDRISSAH ONLINE SHOP.
+
+    All Rights Reserved.
+
+</p>
+```
+
+</footer>
+
+</body>
+
+</html>

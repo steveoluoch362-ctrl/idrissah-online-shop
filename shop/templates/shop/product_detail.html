@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ product.name }} | Idrissah Online Shop</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        .header {
+            background: #111;
+            color: white;
+            padding: 18px 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #111;
+            font-weight: bold;
+        }
+
+        .product-detail {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-image-container {
+            width: 100%;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .no-image {
+            color: #777;
+            font-size: 18px;
+        }
+
+        .product-info {
+            padding: 20px 0;
+        }
+
+        .product-info h2 {
+            font-size: 34px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #008000;
+            margin: 20px 0;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .stock {
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .whatsapp:hover {
+            background: #1ebe5d;
+        }
+
+        @media (max-width: 768px) {
+
+            .product-detail {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .product-image-container {
+                min-height: 300px;
+            }
+
+            .product-info h2 {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <h1>Idrissah Online Shop</h1>
+
+</div>
+
+
+<div class="container">
+
+    <a href="/" class="back">
+        ← Back to Products
+    </a>
+
+
+    <div class="product-detail">
+
+
+        <div class="product-image-container">
+
+            {% if product.image %}
+
+                <img
+                    src="{{ product.image.url }}"
+                    alt="{{ product.name }}"
+                    class="product-image"
+                >
+
+            {% else %}
+
+                <div class="no-image">
+                    No Product Image Available
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <div class="product-info">
+
+            <h2>
+                {{ product.name }}
+            </h2>
+
+
+            <div class="price">
+
+                TSh {{ product.price }}
+
+            </div>
+
+
+            {% if product.description %}
+
+                <div class="description">
+
+                    {{ product.description }}
+
+                </div>
+
+            {% endif %}
+
+
+            {% if product.stock > 0 %}
+
+                <div class="stock">
+
+                    ✅ In Stock
+
+                </div>
+
+            {% else %}
+
+                <div class="stock">
+
+                    ❌ Out of Stock
+
+                </div>
+
+            {% endif %}
+
+
+            <a
+                href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop,%20I%20am%20interested%20in%20{{ product.name }}"
+                class="whatsapp"
+                target="_blank"
+            >
+
+                📱 Order via WhatsApp
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

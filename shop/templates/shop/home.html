@@ -10,6 +10,10 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
+    <title>
+        Idrissah Online Shop | Dar es Salaam, Tanzania
+    </title>
+
     <!-- =========================
          PWA SETTINGS
     ========================== -->
@@ -27,18 +31,13 @@
           content="yes">
 
     <meta name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent">
+          content="default">
 
     <meta name="apple-mobile-web-app-title"
           content="Idrissah Shop">
 
     <link rel="apple-touch-icon"
-          href="{% static 'shop/icons/icon-192.png' %}">
-
-
-    <title>
-        Idrissah Online Shop | Dar es Salaam, Tanzania
-    </title>
+          href="{% static 'shop/images/logo.png' %}">
 
 
     <style>
@@ -1090,7 +1089,6 @@
 
     </div>
 
-
     <div>
 
         📞
@@ -1106,45 +1104,32 @@
 </div>
 
 
-
 <!-- =========================
      HEADER
 ========================= -->
 
 <header>
 
-
     <div class="logo-area">
-
 
         <img
             src="{% static 'shop/images/logo.png' %}"
             alt="Idrissah Online Shop Logo"
         >
 
-
         <div class="logo-text">
 
-
             <h1>
-
                 Idrissah Online Shop
-
             </h1>
 
-
             <p>
-
                 Your Trusted Online Marketplace
-
             </p>
-
 
         </div>
 
-
     </div>
-
 
 
     <form
@@ -1153,47 +1138,32 @@
         action="/"
     >
 
-
         <input
             type="text"
             name="q"
             placeholder="Search for products..."
         >
 
-
         <button type="submit">
-
             🔍
-
         </button>
-
 
     </form>
 
 
-
     <div class="header-actions">
 
-
         <a href="#contact">
-
             👤 Account
-
         </a>
-
 
         <a href="#products">
-
             🛒 Cart
-
         </a>
-
 
     </div>
 
-
 </header>
-
 
 
 <!-- =========================
@@ -1202,34 +1172,27 @@
 
 <nav>
 
-
     <a href="/">
         🏠 Home
     </a>
-
 
     <a href="#categories">
         🏷️ Categories
     </a>
 
-
     <a href="#products">
         🛍️ Products
     </a>
-
 
     <a href="#products">
         🔥 Hot Deals
     </a>
 
-
     <a href="#about">
         ℹ️ About Us
     </a>
 
-
 </nav>
-
 
 
 <!-- =========================
@@ -1238,9 +1201,7 @@
 
 <section class="hero">
 
-
     <div class="hero-content">
-
 
         <h2>
 
@@ -1251,7 +1212,6 @@
             You Love, Online
 
         </h2>
-
 
         <p>
 
@@ -1265,7 +1225,6 @@
 
         </p>
 
-
         <a
             href="#products"
             class="hero-button"
@@ -1274,7 +1233,6 @@
             🛍️ Start Shopping
 
         </a>
-
 
         <a
             href="#contact"
@@ -1285,12 +1243,9 @@
 
         </a>
 
-
     </div>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -1302,30 +1257,20 @@
     id="categories"
 >
 
-
     <div class="section-title">
 
-
         <h2>
-
             🛒 Shop By Category
-
         </h2>
 
-
         <p>
-
             Find what you need quickly.
-
         </p>
-
 
     </div>
 
 
-
     <div class="categories">
-
 
         <div class="category">
 
@@ -1430,12 +1375,9 @@
 
         </div>
 
-
     </div>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -1447,44 +1389,30 @@
     id="products"
 >
 
-
     <div class="section-title">
 
-
         <h2>
-
             Featured Products
-
         </h2>
 
-
         <p>
-
             Quality products at affordable prices.
-
         </p>
-
 
     </div>
 
 
-
     <div class="products">
-
 
         {% for product in products %}
 
-
         <div class="product-card">
-
 
             <a
                 href="{% url 'product_detail' product.id %}"
             >
 
-
                 {% if product.image %}
-
 
                 <img
                     src="{{ product.image.url }}"
@@ -1492,9 +1420,7 @@
                     class="product-image"
                 >
 
-
                 {% else %}
-
 
                 <div
                     class="product-image"
@@ -1510,30 +1436,22 @@
 
                 </div>
 
-
                 {% endif %}
-
 
             </a>
 
 
-
             <div class="product-info">
 
-
                 <h3>
-
                     {{ product.name }}
-
                 </h3>
-
 
                 <div class="product-price">
 
                     TSh {{ product.price }}
 
                 </div>
-
 
                 <a
                     href="{% url 'product_detail' product.id %}"
@@ -1544,15 +1462,12 @@
 
                 </a>
 
-
             </div>
-
 
         </div>
 
 
         {% empty %}
-
 
         <div
             style="
@@ -1564,13 +1479,9 @@
             "
         >
 
-
             <h2>
-
                 No Products Available Yet
-
             </h2>
-
 
             <p
                 style="
@@ -1583,18 +1494,13 @@
 
             </p>
 
-
         </div>
-
 
         {% endfor %}
 
-
     </div>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -1603,114 +1509,82 @@
 
 <section class="container">
 
-
     <div class="features">
 
-
         <div class="feature">
-
 
             <div class="feature-icon">
                 🛍️
             </div>
 
-
             <h3>
                 Quality Products
             </h3>
 
-
             <p>
-
                 Shop quality products
                 from our store.
-
             </p>
-
 
         </div>
 
 
-
         <div class="feature">
-
 
             <div class="feature-icon">
                 💳
             </div>
 
-
             <h3>
                 Secure Payments
             </h3>
 
-
             <p>
-
                 Convenient payment
                 options available.
-
             </p>
-
 
         </div>
 
 
-
         <div class="feature">
-
 
             <div class="feature-icon">
                 📦
             </div>
 
-
             <h3>
                 Easy Ordering
             </h3>
 
-
             <p>
-
                 Order online quickly
                 and easily.
-
             </p>
-
 
         </div>
 
 
-
         <div class="feature">
-
 
             <div class="feature-icon">
                 💬
             </div>
 
-
             <h3>
                 WhatsApp Support
             </h3>
 
-
             <p>
-
                 Contact us anytime
                 for assistance.
-
             </p>
-
 
         </div>
 
-
     </div>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -1722,19 +1596,13 @@
     id="about"
 >
 
-
     <div class="about">
 
-
         <h2>
-
             About Idrissah Online Shop
-
         </h2>
 
-
         <p>
-
 
             <strong>
                 Idrissah Online Shop
@@ -1743,79 +1611,54 @@
             is your trusted online marketplace
             based in Dar es Salaam, Tanzania.
 
-
             We provide quality products,
             affordable prices and convenient
             online ordering.
 
-
         </p>
 
-
         <p>
-
 
             Our goal is to make shopping
             easier and more convenient
             for customers across Tanzania.
 
-
         </p>
-
-
-
-        <!-- MAIN BRANCH LOCATION -->
 
 
         <div class="location-box">
 
-
             <h3>
-
                 📍 Our Main Branch
-
             </h3>
-
 
             <p>
 
-
                 <strong>
-
                     Sinza Kamanyola
-
                 </strong>
 
-
                 <br>
-
 
                 <strong>
-
                     Opposite MACK Quality
-
                 </strong>
 
-
                 <br>
-
 
                 Dar es Salaam,
 
-
                 <br>
-
 
                 Tanzania
 
-
             </p>
-
 
 
             <a
                 href="https://maps.app.goo.gl/H8VhjrB1pS2ZHtku8"
                 target="_blank"
+                rel="noopener"
                 class="map-button"
             >
 
@@ -1823,15 +1666,11 @@
 
             </a>
 
-
         </div>
-
 
     </div>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -1843,13 +1682,9 @@
     id="contact"
 >
 
-
     <h2>
-
         Contact Idrissah Online Shop
-
     </h2>
-
 
     <p>
 
@@ -1859,7 +1694,6 @@
         or WhatsApp.
 
     </p>
-
 
 
     <div class="contact-buttons">
@@ -1879,7 +1713,6 @@
         </a>
 
 
-
         <a
             href="tel:+255791338080"
             class="contact-button call-button"
@@ -1894,10 +1727,10 @@
         </a>
 
 
-
         <a
             href="https://wa.me/255689435698?text=Hello%20Idrissah%20Online%20Shop,%20I%20need%20assistance."
             target="_blank"
+            rel="noopener"
             class="contact-button whatsapp-button"
         >
 
@@ -1910,10 +1743,10 @@
         </a>
 
 
-
         <a
             href="https://wa.me/255791338080?text=Hello%20Idrissah%20Online%20Shop,%20I%20need%20assistance."
             target="_blank"
+            rel="noopener"
             class="contact-button whatsapp-button"
         >
 
@@ -1925,12 +1758,9 @@
 
         </a>
 
-
     </div>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -1939,12 +1769,10 @@
 
 <footer>
 
-
     <div class="footer-grid">
 
 
         <div class="footer-column">
-
 
             <img
                 src="{% static 'shop/images/logo.png' %}"
@@ -1952,89 +1780,57 @@
                 class="footer-logo"
             >
 
-
             <h3>
-
                 IDRISSAH ONLINE SHOP
-
             </h3>
-
 
             <p>
 
                 Your trusted online marketplace.
 
-
                 Discover quality products,
                 great prices and easy ordering
                 from anywhere.
 
-
             </p>
 
-
         </div>
-
 
 
         <div class="footer-column">
 
-
             <h3>
-
                 Quick Links
-
             </h3>
-
 
             <a href="/">
-
                 Home
-
             </a>
-
 
             <a href="#categories">
-
                 Categories
-
             </a>
-
 
             <a href="#products">
-
                 Products
-
             </a>
-
 
             <a href="#about">
-
                 About Us
-
             </a>
-
 
             <a href="#contact">
-
                 Customer Service
-
             </a>
-
 
         </div>
 
 
-
         <div class="footer-column">
 
-
             <h3>
-
                 Our Location
-
             </h3>
-
 
             <p>
 
@@ -2058,108 +1854,83 @@
 
             </p>
 
-
             <br>
-
 
             <a
                 href="https://maps.app.goo.gl/H8VhjrB1pS2ZHtku8"
                 target="_blank"
+                rel="noopener"
             >
 
                 🗺️ Get Directions to Our Branch
 
             </a>
 
-
         </div>
-
 
 
         <div class="footer-column">
 
-
             <h3>
-
                 Contact Us
-
             </h3>
 
-
-            <a
-                href="tel:+255689435698"
-            >
+            <a href="tel:+255689435698">
 
                 📞 +255 689 435 698
 
             </a>
 
-
-            <a
-                href="tel:+255791338080"
-            >
+            <a href="tel:+255791338080">
 
                 📞 +255 791 338 080
 
             </a>
 
-
             <br>
-
 
             <a
                 href="https://wa.me/255689435698"
                 target="_blank"
+                rel="noopener"
             >
 
                 💬 WhatsApp
 
             </a>
-
 
             <a
                 href="https://wa.me/255791338080"
                 target="_blank"
+                rel="noopener"
             >
 
                 💬 WhatsApp
 
             </a>
 
-
         </div>
 
-
     </div>
-
 
 
     <div class="copyright">
 
-
         © 2026 Idrissah Online Shop.
-
 
         All Rights Reserved.
 
-
         <br>
-
 
         Quality Products • Affordable Prices
 
-
         • Sinza Kamanyola • Opposite MACK Quality
-
 
         • Dar es Salaam, Tanzania
 
-
     </div>
 
-
 </footer>
-
 
 
 <!-- =========================
@@ -2168,34 +1939,43 @@
 
 <script>
 
-if ("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator) {
 
-    window.addEventListener("load", function () {
+        window.addEventListener(
+            "load",
+            function () {
 
-        navigator.serviceWorker
-            .register("{% static 'shop/service-worker.js' %}")
+                navigator.serviceWorker
+                    .register(
+                        "{% static 'shop/service-worker.js' %}"
+                    )
 
-            .then(function (registration) {
+                    .then(
+                        function (registration) {
 
-                console.log(
-                    "Idrissah Online Shop Service Worker registered successfully.",
-                    registration.scope
-                );
+                            console.log(
+                                "Idrissah Online Shop Service Worker registered:",
+                                registration.scope
+                            );
 
-            })
+                        }
+                    )
 
-            .catch(function (error) {
+                    .catch(
+                        function (error) {
 
-                console.error(
-                    "Service Worker registration failed:",
-                    error
-                );
+                            console.log(
+                                "Service Worker registration failed:",
+                                error
+                            );
 
-            });
+                        }
+                    );
 
-    });
+            }
+        );
 
-}
+    }
 
 </script>
 
